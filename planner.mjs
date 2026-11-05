@@ -10,9 +10,14 @@ export const longDate = (s) => parse(s).toLocaleDateString('vi-VN',{weekday:'lon
 const DAYS = ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','Chủ nhật'];
 export { DAYS };
 
+export const isStrength = type => Boolean(type && type !== 'C');
 function lastStrengthBefore(logs, firstDay) {
-  const previous = Object.entries(logs||{}).filter(([date, log]) => date < firstDay && log?.completed && ['A','B'].includes(log.type)).sort((a,b)=>b[0].localeCompare(a[0]));
+  const previous = Object.entries(logs||{}).filter(([date, log]) => date < firstDay && log?.completed && isStrength(log.type)).sort((a,b)=>b[0].localeCompare(a[0]));
   return previous.length ? {date:previous[0][0], type:previous[0][1].type} : null;
+}
+function lastABBefore(logs, firstDay) {
+  const previous = Object.entries(logs||{}).filter(([date, log]) => date < firstDay && log?.completed && ['A','B'].includes(log.type)).sort((a,b)=>b[0].localeCompare(a[0]));
+  return previous.length ? previous[0][1].type : null;
 }
 
 /**
@@ -27,12 +32,17 @@ export function buildWeek(start, today, state={}) {
   const completed = inWeek.map(x=>x.log.type);
   const doneA=completed.includes('A'),doneB=completed.includes('B'),doneC=completed.includes('C');
   const lastPrev=lastStrengthBefore(logs,start);
-  const preferredFirst=lastPrev?.type==='A'?'B':'A';
-  const nextOrder=(doneA&&doneB)?[] : doneA?['B'] : doneB?['A'] : [preferredFirst, preferredFirst==='A'?'B':'A'];
+  const strengthDone=inWeek.filter(x=>isStrength(x.log.type)).sort((a,b)=>a.date.localeCompare(b.date));
+  const priorAB=lastABBefore(logs,start);
+  const preferredFirst=priorAB==='A'?'B':'A';
+  // A muscle-focus session occupies one of the two weekly strength slots.
+  // Do not schedule extra A/B on top of manually completed strength sessions.
+  const need=Math.max(0,2-strengthDone.length);
+  const preference=(doneA&&doneB)?[]:doneA?['B']:doneB?['A']:[preferredFirst,preferredFirst==='A'?'B':'A'];
+  const nextOrder=preference.slice(0,need);
   const minDay=today>start?today:start;
   const isAvailable=(d)=> d>=minDay && !skips[d] && !logs[d]?.completed && entries[d]?.kind==='rest';
   const planned=[];
-  const strengthDone=inWeek.filter(x=>['A','B'].includes(x.log.type)).sort((a,b)=>a.date.localeCompare(b.date));
   let anchor=strengthDone.at(-1)?.date || lastPrev?.date || null;
   // Pick as early as practicable, except reserve Friday for the second strength day.
   for (let i=0; i<nextOrder.length; i++) {
@@ -66,8 +76,8 @@ export function buildWeek(start, today, state={}) {
     else if(skips[d]) entries[d]={...entries[d],kind:'skipped',type:null};
     else if(d<today && entries[d].kind==='rest') entries[d]={...entries[d],kind:'past',type:null};
   }
-  const unplanned=['A','B','C'].filter(t=>!completed.includes(t)&&!planned.some(p=>p.type===t));
-  const doneStrength=completed.filter(t=>t==='A'||t==='B').length;
+  const unplanned=[...nextOrder,'C'].filter(t=>!completed.includes(t)&&!planned.some(p=>p.type===t));
+  const doneStrength=completed.filter(isStrength).length;
   return {start,end,days:dates.map(d=>entries[d]),planned:planned.sort((a,b)=>a.date.localeCompare(b.date)),completed:inWeek.length,doneStrength,unplanned,doneTypes:completed, future:end>=today, todayInWeek:start<=today && today<=end};
 }
 
@@ -75,12 +85,12 @@ export function weeklyStats(logs={}, referenceDay=iso(new Date())){
   const thisMon=monday(referenceDay);
   const keys=Object.keys(logs).filter(d=>logs[d]?.completed).sort();
   const total=keys.length;
-  const strength=keys.filter(d=>['A','B'].includes(logs[d].type)).length;
+  const strength=keys.filter(d=>isStrength(logs[d].type)).length;
   const cardio=keys.filter(d=>logs[d].type==='C').length;
   let streak=0;
   for (let i=0;i<104;i++){
     const s=move(thisMon,-7*i), e=move(s,6);
-    const n=keys.filter(d=>d>=s&&d<=e&&['A','B'].includes(logs[d].type)).length;
+    const n=keys.filter(d=>d>=s&&d<=e&&isStrength(logs[d].type)).length;
     if(i===0&&n===0) continue;
     if(n>=2)streak++;else break;
   }

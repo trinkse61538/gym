@@ -1,7 +1,9 @@
+import { EXTRA_EXERCISES, MUSCLE_GROUPS, FOCUS_TEMPLATES, GROUP_IDS } from './catalog.js';
+export { MUSCLE_GROUPS, FOCUS_TEMPLATES, GROUP_IDS };
 // All how-to text is authored for this private beginner-friendly app.
 // Source pages link to published exercise demonstrations; they are not copied or embedded.
 const demo = (slug)=>`https://www.strengthlog.com/${slug}/`;
-export const EXERCISES = {
+const CORE_EXERCISES = {
   legPress:{name:'Leg Press',vi:'Đạp đùi bằng máy',group:'Chân · Mông',equipment:'Máy Leg Press',sets:2,reps:'10–12',rest:90,icon:'🦵',difficulty:'Dễ',video:'https://www.youtube.com/watch?v=p5dCqF7wWUw',
     steps:['Chỉnh ghế sao cho lưng và mông áp sát đệm; bàn chân rộng bằng vai.','Hạ tạ từ từ cho đến khi đầu gối gập trong biên độ thoải mái, không để lưng dưới cuộn lên.','Đẩy cả bàn chân vào bàn đạp và duỗi chân có kiểm soát; không khóa cứng gối.'],breath:'Hít vào khi hạ bàn đạp, thở ra khi đẩy lên.',avoid:'Không hạ quá sâu làm xương chậu nhấc khỏi ghế; tránh nín thở.',alternatives:['goblet','stepUp']},
   chestPress:{name:'Machine Chest Press',vi:'Đẩy ngực bằng máy',group:'Ngực · Tay sau',equipment:'Máy Chest Press',sets:2,reps:'8–12',rest:75,icon:'💪',difficulty:'Dễ',video:'https://www.youtube.com/watch?v=sqNwDkUU_Ps',
@@ -39,10 +41,16 @@ export const EXERCISES = {
   elliptical:{name:'Elliptical',vi:'Máy đi bộ trên không',group:'Tim mạch',equipment:'Máy Elliptical',sets:1,reps:'20–25 phút',rest:0,icon:'🚶',difficulty:'Vừa sức',video:'https://www.nhs.uk/live-well/exercise/',
     steps:['Bắt đầu với mức kháng lực rất thấp.','Đẩy đều chân, giữ thân thẳng và vai thả lỏng.','Giảm dần tốc độ trong 5 phút cuối.'],breath:'Thở đều, dùng bài kiểm tra trò chuyện.',avoid:'Nếu hụt hơi bất thường, dừng và nghỉ.',alternatives:['bike','treadmill']}
 };
+export const EXERCISES = {...CORE_EXERCISES,...EXTRA_EXERCISES};
+const FOCUS_SESSIONS = Object.fromEntries(Object.entries(FOCUS_TEMPLATES).map(([id,template])=>{
+  const group=MUSCLE_GROUPS.find(x=>x.id===template.groupId);
+  return [id,{name:`Chuyên ${group.name}`,title:template.title,kind:'strength',time:'35–50 phút',accent:'lime',icon:group.icon,description:`Buổi ưu tiên ${group.name.toLowerCase()}: 4–5 bài được chọn cho người mới. Tùy ý đổi hoặc thêm bài.`,groupId:group.id,exerciseIds:[...template.exerciseIds]}];
+}));
 export const SESSIONS={
   A:{name:'Full Body A',title:'Xây nền tảng',kind:'strength',time:'40–45 phút',accent:'lime',icon:'🏋️',description:'Máy tập dễ làm quen · chân, ngực, lưng và core',exerciseIds:['legPress','chestPress','latPull','legCurl','deadBug']},
   B:{name:'Full Body B',title:'Tăng sức mạnh',kind:'strength',time:'40–45 phút',accent:'purple',icon:'💪',description:'Thân dưới, lưng, vai và ổn định cột sống',exerciseIds:['goblet','seatedRow','gluteBridge','shoulderPress','deadBug']},
-  C:{name:'Cardio nhẹ',title:'Tim mạch & hồi phục',kind:'cardio',time:'25–30 phút',accent:'aqua',icon:'🚶',description:'Đi bộ máy 0–2% dốc, theo tuần và talk test',exerciseIds:['treadmill']}
+  C:{name:'Cardio nhẹ',title:'Tim mạch & hồi phục',kind:'cardio',time:'25–30 phút',accent:'aqua',icon:'🚶',description:'Đi bộ máy 0–2% dốc, theo tuần và talk test',exerciseIds:['treadmill']},
+  ...FOCUS_SESSIONS
 };
 export const RESOURCES=[
   {label:'CDC – khuyến nghị vận động người trưởng thành',url:'https://www.cdc.gov/physical-activity-basics/guidelines/adults.html'},

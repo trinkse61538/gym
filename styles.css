@@ -38,3 +38,18 @@
 @media(max-width:750px){.walk-guide{padding:14px}.walk-steps{gap:5px}.walk-steps>div{padding:10px 7px}.walk-steps b{font-size:20px}.walk-steps strong{font-size:10px}.walk-steps span{font-size:9px}.workout-exercise .exercise-toggle{padding:13px}.workout-exercise .exercise-body{padding:13px}.exercise-toggle>.chip{display:none}.instruction-list{font-size:12px}}
 @media(max-width:370px){.walk-steps{grid-template-columns:1fr}.walk-steps>div{display:grid;grid-template-columns:50px 1fr 90px;align-items:center}.walk-steps>div small{grid-column:3}.walk-steps b{grid-row:1/3}}
 @media(max-width:750px){.head-row{flex-wrap:wrap}.head-row>.week-nav{width:100%;flex-wrap:wrap;justify-content:flex-start}}
+
+/* GymOS 2.0 — large muscle library and customizable focused sessions */
+.muscle-panel{margin-bottom:19px}.muscle-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:17px}
+.muscle-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:138px;text-align:left;color:#e1eeeb;background:#1a2b2e;border:1px solid #38504e;border-radius:13px;padding:15px;cursor:pointer;min-width:0}
+.muscle-card:hover,.muscle-card.selected{border-color:var(--lime);background:#223b31}.muscle-card.selected b{color:var(--lime)}
+.muscle-card b{font-size:15px}.muscle-card small{color:var(--lime);font-weight:800}.muscle-icon{font-size:24px}.muscle-desc{font-size:10px;line-height:1.55;color:#9ab6b2}
+.muscle-target{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 19px}
+.muscle-target>div{background:#20322f;border:1px solid #37544b;border-radius:10px;padding:10px;display:grid;gap:5px;font-size:12px;color:#bad5ca}
+.muscle-target b{font-size:11px;color:var(--lime)}.custom-workout{padding:20px;margin-top:16px;background:#172d29;border:1px dashed #577668;border-radius:14px}
+.custom-row{display:flex;gap:8px;align-items:center;margin-top:14px}.custom-row .field{flex:1;min-width:0;max-width:100%}
+.focus-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.focus-choice-grid .btn{white-space:normal;justify-content:flex-start;text-align:left}
+.modal{max-height:min(88vh,740px);overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:980px){.muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.muscle-card{min-height:124px;padding:12px}.muscle-desc{font-size:10px}.muscle-target{grid-template-columns:1fr}.custom-row{flex-direction:column;align-items:stretch}.custom-row select{width:100%}.focus-choice-grid .btn{font-size:12px;padding:11px 8px}}
+@media(max-width:360px){.focus-choice-grid{grid-template-columns:1fr}.muscle-card{padding:10px}}

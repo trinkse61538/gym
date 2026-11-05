@@ -77,3 +77,14 @@ Nếu đã tạo repo/remote rồi, đừng chạy `git init` hoặc `git remote
 
 - Bản này sử dụng số đo mẫu (170 cm, 70 kg, mục tiêu 68 kg), không điền sẵn số đo hoặc tiền sử sức khỏe riêng. Hãy mở **Cài đặt & dữ liệu** để nhập số đo đúng của mình sau khi triển khai.
 - Website GitHub Pages và nội dung repository public có thể được người khác xem. Nhật ký tập thực tế chỉ lưu trong localStorage của trình duyệt mà bạn sử dụng, không tự đồng bộ.
+
+
+## GymOS v2.0 — Muscle library and focused workouts
+
+- New `catalog.js`: 8 main muscle groups × 20 distinct exercise options (160 additional movements), plus the original library. Each has Vietnamese setup, execution, breath, caution, equipment, primary/secondary muscles, difficulty and alternatives.
+- Video buttons for new movements open an exercise-specific YouTube **search results** page; these are not verified direct video endorsements.
+- Select any day of the week → one of 8 focused sessions (chest, back, shoulders, legs, glutes, biceps, triceps, core), or keep Full Body A/B and treadmill.
+- Customize an active workout by adding/removing movements, up to 8 exercises; 4–6 suggested for beginners. Session choices are stored in its draft/log and preserved in backup JSON.
+- A completed focused resistance session counts toward the two weekly strength sessions; the adaptive planner does not automatically pile two additional Full Body sessions on top. Recommended strength days keep at least 48h spacing.
+- Service Worker precaches `catalog.js` with cache v3. After deployment refresh once with a network connection.
+- Users with cardiovascular/respiratory history should check with their clinician before increasing training intensity. All new movements are library options, not a recommendation to perform 20 in one workout.
