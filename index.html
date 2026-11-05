@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1015">
+  <meta name="description" content="GymOS - lịch gym linh hoạt cho người mới, hướng dẫn động tác, nhật ký và tiến độ cá nhân.">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="GymOS — Tập đều, theo cách của bạn">
+  <meta property="og:description" content="Huấn luyện cá nhân đơn giản, lịch tập tự thích nghi, nhật ký riêng tư.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <title>GymOS — Personal Training</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Điều hướng">
+      <div class="brand"><span class="brand-icon">G<span class="brand-dot">.</span></span><span class="brand-text">Gym<span>OS</span><small>PERSONAL TRAINING</small></span></div>
+      <div class="side-label">KHÔNG GIAN CỦA BẠN</div>
+      <nav class="side-nav">
+        <button data-nav="home" class="nav-link"><span>⌂</span> Tổng quan</button>
+        <button data-nav="week" class="nav-link"><span>▦</span> Lịch tập tuần</button>
+        <button data-nav="library" class="nav-link"><span>▤</span> Thư viện bài tập</button>
+        <button data-nav="history" class="nav-link"><span>◴</span> Nhật ký tập</button>
+        <button data-nav="insights" class="nav-link"><span>▥</span> Tiến độ</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="coach-card"><span class="coach-icon">✦</span><strong>Tiến bộ nhỏ, bền vững.</strong><p>Không cần tập hoàn hảo. Chỉ cần quay lại buổi tiếp theo.</p></div>
+        <button data-nav="settings" class="nav-link"><span>⚙</span> Cài đặt & dữ liệu</button>
+        <div class="sidebar-foot">GYMOS v1.0 <span>·</span> LƯU TRÊN THIẾT BỊ</div>
+      </div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar">
+        <div class="topbar-left"><span class="topbar-mark">✦</span><span>PERSONAL TRAINING OS</span></div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Hoạt động trên thiết bị</span><button class="topbar-settings" data-nav="settings" title="Cài đặt" aria-label="Cài đặt">⚙</button></div>
+      </header>
+      <main id="app" class="app-container" tabindex="-1"><div class="loading">Đang chuẩn bị lịch tập…</div></main>
+      <footer class="footer"><span>Built for consistency, not perfection.</span><span>GymOS · Private by design</span></footer>
+    </div>
+  </div>
+  <nav class="bottom-nav" aria-label="Điều hướng trên điện thoại">
+    <button data-nav="home"><span>⌂</span><small>Hôm nay</small></button>
+    <button data-nav="week"><span>▦</span><small>Lịch tập</small></button>
+    <button data-nav="library"><span>▤</span><small>Bài tập</small></button>
+    <button data-nav="history"><span>◴</span><small>Nhật ký</small></button>
+    <button data-nav="insights"><span>▥</span><small>Tiến độ</small></button>
+  </nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
