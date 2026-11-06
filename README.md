@@ -171,3 +171,11 @@ Nếu đã tạo repo/remote rồi, đừng chạy `git init` hoặc `git remote
 - A completed focused resistance session counts toward the two weekly strength sessions; the adaptive planner does not automatically pile two additional Full Body sessions on top. Recommended strength days keep at least 48h spacing.
 - Service Worker precaches `catalog.js` with cache v3. After deployment refresh once with a network connection.
 - Users with cardiovascular/respiratory history should check with their clinician before increasing training intensity. All new movements are library options, not a recommendation to perform 20 in one workout.
+
+
+## GymOS v4.3: Ảnh minh họa chính xác trên điện thoại
+- Đã bỏ cơ chế dùng 9 ảnh mẫu thay phiên cho mọi bài tập. Thư viện dùng `exercise-media.js` để ánh xạ **theo ID**.
+- Hình tư thế đầu/cuối từ [yuhonas/free-exercise-db](https://github.com/yuhonas/free-exercise-db) — dữ liệu/ảnh được dự án công bố theo **Unlicense**. Cảm ơn dự án nguồn.
+- Ảnh dùng kết nối Internet (thử raw GitHub, sau đó CDN dự phòng). Khi chưa có ảnh tương thích hoặc tải lỗi, GymOS hiện thông báo rõ ràng — không thay bằng ảnh của bài khác.
+- Thẻ hình dùng `object-fit: contain` và chiều cao mobile thích ứng để không cắt người, máy hoặc thanh tạ.
+- Không đổi localStorage key `gymos_local_v2` của v4.2 nên giữ nguyên nhật ký và tùy chọn hiện tại trên cùng trình duyệt.

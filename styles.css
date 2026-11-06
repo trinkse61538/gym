@@ -378,3 +378,51 @@ body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
 .cardio-move-title,.exercise-toggle{align-items:flex-start}
 @media(max-width:900px){.detail-hero-visual .detail-top{flex-direction:column;align-items:flex-start}.exercise-visual{width:100%;min-width:0;max-width:100%}}
 @media(max-width:750px){.exercise-card-body{padding:14px 14px 16px}.workout-thumb{width:72px;height:72px}.workout-thumb.cardio-thumb{width:68px;height:68px}.breath-list{margin-left:16px}}
+
+/* GymOS v4.3 — accuracy-first, uncropped image presentation */
+.exercise-grid{align-items:start}
+.exercise-list-card{align-self:start;height:auto;min-height:0}
+.exercise-list-card .exercise-card-body{height:auto;min-height:0;flex:0 1 auto;justify-content:flex-start}
+.exercise-list-card .exercise-specs{margin-top:0}
+.exercise-list-card .buttonrow{margin-top:3px}
+.exercise-cover,.exercise-visual,.workout-thumb{position:relative;background:#101b22;overflow:hidden}
+.exercise-cover{aspect-ratio:16/10;display:grid;place-items:center}
+.exercise-cover img.exercise-photo{height:100%;width:100%;object-fit:contain;object-position:center}
+.exercise-visual{aspect-ratio:auto;display:grid;min-width:0;width:min(100%,430px);max-width:430px}
+.exercise-visual .exercise-pair-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;min-width:0}
+.exercise-frame{position:relative;display:flex;flex-direction:column;min-width:0;color:#dbe9ed;text-decoration:none;gap:5px}
+.exercise-frame img.exercise-photo{display:block;width:100%;height:182px;object-fit:contain;object-position:center;background:#15242b;border-radius:10px}
+.exercise-frame>span{text-align:center;font-size:10px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.workout-thumb img.exercise-photo{object-fit:contain!important;background:#101b22}
+.exercise-media-placeholder{display:grid;gap:6px;align-content:center;place-items:center;text-align:center;padding:18px;min-width:0;min-height:120px;width:100%;height:100%;color:#dcebe9;overflow:hidden}
+.exercise-media-placeholder span{font-weight:800;font-size:9px;letter-spacing:.12em;color:var(--lime)}
+.exercise-media-placeholder strong{font-size:clamp(12px,2vw,16px);line-height:1.25;max-width:100%;overflow-wrap:anywhere}
+.exercise-media-placeholder small{font-size:11px;font-weight:400;line-height:1.4;color:var(--muted);max-width:100%;overflow-wrap:anywhere}
+.exercise-media-empty{border:1px dashed #3d5157}
+.exercise-media-empty:before{content:'';position:absolute;width:150%;height:1px;transform:rotate(-26deg);background:linear-gradient(90deg,transparent,var(--accent-line),transparent);pointer-events:none}
+.exercise-media .media-error{display:none}
+.exercise-media.media-failed>.exercise-photo,.exercise-media.media-failed .exercise-pair-grid{display:none}
+.exercise-media.media-failed>.media-error{display:grid}
+.workout-thumb.exercise-media-empty .exercise-media-placeholder{padding:5px;min-height:0;gap:2px}
+.workout-thumb.exercise-media-empty .exercise-media-placeholder span{font-size:7px}
+.workout-thumb.exercise-media-empty .exercise-media-placeholder strong{font-size:9px}
+.workout-thumb.exercise-media-empty .exercise-media-placeholder small{display:none}
+.detail-hero-visual .detail-top{min-width:0}
+@media(max-width:900px){.detail-hero-visual .detail-top{align-items:stretch}.exercise-visual{max-width:100%;width:100%}}
+@media(max-width:750px){
+  .exercise-cover{aspect-ratio:16/10;max-height:none}
+  .exercise-cover img.exercise-photo{object-fit:contain!important}
+  .exercise-visual{width:100%;max-width:100%;min-width:0;border-radius:13px;aspect-ratio:auto!important}
+  .exercise-visual .exercise-pair-grid{gap:5px;padding:7px}
+  .exercise-frame img.exercise-photo{height:clamp(120px,38vw,190px);object-fit:contain!important}
+  .exercise-frame>span{font-size:9px}
+  .exercise-list-card .exercise-card-body{min-height:0;height:auto;padding:14px 14px 16px}
+  .exercise-list-card .exercise-specs{margin-top:4px}
+  .workout-thumb{flex:none}
+}
+
+/* Small-card fallback remains legible on narrow devices */
+.workout-thumb .media-error{padding:5px;min-height:0;gap:1px}
+.workout-thumb .media-error span{font-size:7px}
+.workout-thumb .media-error strong{font-size:9px}
+.workout-thumb .media-error small{display:none}
