@@ -53,3 +53,29 @@
 @media(max-width:980px){.muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:750px){.muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.muscle-card{min-height:124px;padding:12px}.muscle-desc{font-size:10px}.muscle-target{grid-template-columns:1fr}.custom-row{flex-direction:column;align-items:stretch}.custom-row select{width:100%}.focus-choice-grid .btn{font-size:12px;padding:11px 8px}}
 @media(max-width:360px){.focus-choice-grid{grid-template-columns:1fr}.muscle-card{padding:10px}}
+/* GymOS v3: cardio and endurance */
+.cardio-hero{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-bottom:20px;border-radius:20px;border:1px solid #42716f;background:linear-gradient(125deg,#123434,#1b292e 75%,#142129);padding:26px 30px}
+.cardio-hero p{color:#bed1ce;max-width:610px;font-size:13px;line-height:1.7}
+.cardio-hero-stats{flex:0 0 176px;min-height:146px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #3e6866;border-radius:20px;background:#173a39;padding:16px;text-align:center}
+.cardio-hero-stats strong{font-size:44px;color:var(--lime);letter-spacing:-.04em;line-height:1}
+.cardio-hero-stats strong small{display:block;font-size:12px;color:#bad1c8;letter-spacing:0;margin-top:8px}
+.cardio-hero-stats>small{font-size:10px;color:#90b7b3;margin-top:13px}
+.cardio-mode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.cardio-mode{border:1px solid #344b4b;background:var(--card);border-radius:16px;text-align:left;display:flex;flex-direction:column;gap:7px;padding:20px;min-width:0;color:var(--text);transition:border-color .2s,background .2s}
+.cardio-mode:hover,.cardio-mode.selected{border-color:#a2cd7c;background:#243b31}
+.cardio-mode-icon{font-size:27px}.cardio-mode strong{font-size:16px}.cardio-mode>span:not(.cardio-mode-icon){font-size:12px;color:#abc0bf}.cardio-mode small{margin-top:auto;color:var(--lime);font-weight:740}
+.cardio-session-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cardio-plan-card{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:15px;background:#14252b;border:1px solid #324449;min-width:0}
+.cardio-plan-icon{font-size:28px}.cardio-plan-card h3{font-size:16px}.cardio-plan-card p{font-size:12px;color:#9fb8b7;flex:1}.cardio-plan-card>.btn{align-self:flex-start}.cardio-plan-card .exercise-specs{margin-top:0}
+.cardio-safety-bar{border-radius:14px;background:#19352d;border:1px solid #52734b;padding:15px 18px;margin-bottom:16px;display:grid;gap:4px}
+.cardio-safety-bar b{color:var(--lime)}.cardio-safety-bar span{color:#b4c8bb;font-size:12px}
+.cardio-routine-caption{background:#132730;border-left:3px solid #5dbcb2;padding:12px 16px;margin-bottom:17px;border-radius:7px}
+.cardio-routine-caption strong{color:#8ce4db}.cardio-routine-caption p{margin-top:5px;font-size:12px;color:#aac4c2}
+.cardio-exercise-stack{display:grid;gap:12px}.cardio-move{border-radius:15px;border:1px solid #354a4d;background:#16252b;min-width:0;overflow:hidden}
+.cardio-move-title{display:flex;align-items:center;gap:12px;padding:15px 17px}.cardio-move-title>div:nth-child(2){min-width:0;flex:1}.cardio-move-title h3{font-size:15px}.cardio-move-title p{font-size:11px;color:#9cb6b5}.cardio-move-title>.chip{flex:none}
+.cardio-move-body{padding:0 17px 15px}.cardio-move-body .instruction-list{margin:10px 0 14px;padding-left:24px}.cardio-move-body .hint-row{margin-bottom:12px}
+.cardio-check{margin-top:14px;display:flex;align-items:center;gap:10px;background:#223b32;border-radius:11px;border:1px solid #3c6153;padding:11px 14px;font-weight:650;font-size:12px;cursor:pointer}.cardio-check input{width:19px;height:19px;accent-color:#c7f474}
+.cardio-form{margin-top:18px}
+@media(max-width:1120px){.cardio-session-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.bottom-nav{gap:0;padding-left:2px;padding-right:2px}.bottom-nav button{min-width:0;flex:1;padding:5px 1px}.bottom-nav button span{font-size:19px}.bottom-nav button small{font-size:8px}.cardio-hero{padding:21px 18px;align-items:flex-start}.cardio-hero-stats{display:none}.cardio-mode-grid{grid-template-columns:1fr;gap:9px}.cardio-mode{padding:13px 15px;gap:3px}.cardio-mode-icon{font-size:23px}.cardio-session-grid{grid-template-columns:1fr}.cardio-plan-card{padding:15px}.cardio-move-title{padding:13px 11px;gap:9px}.cardio-move-title>.chip{font-size:9px;padding:5px 6px}.cardio-move-body{padding:0 11px 13px}}
+@media(max-width:360px){.cardio-move-title>.chip{display:none}.bottom-nav button span{font-size:17px}.bottom-nav button small{font-size:7.5px}}

@@ -1,4 +1,6 @@
 import { EXTRA_EXERCISES, MUSCLE_GROUPS, FOCUS_TEMPLATES, GROUP_IDS } from './catalog.js';
+import { EXTRA_CARDIO, CARDIO_CATEGORIES } from './cardio.js';
+export { CARDIO_CATEGORIES };
 export { MUSCLE_GROUPS, FOCUS_TEMPLATES, GROUP_IDS };
 // All how-to text is authored for this private beginner-friendly app.
 // Source pages link to published exercise demonstrations; they are not copied or embedded.
@@ -41,7 +43,13 @@ const CORE_EXERCISES = {
   elliptical:{name:'Elliptical',vi:'Máy đi bộ trên không',group:'Tim mạch',equipment:'Máy Elliptical',sets:1,reps:'20–25 phút',rest:0,icon:'🚶',difficulty:'Vừa sức',video:'https://www.nhs.uk/live-well/exercise/',
     steps:['Bắt đầu với mức kháng lực rất thấp.','Đẩy đều chân, giữ thân thẳng và vai thả lỏng.','Giảm dần tốc độ trong 5 phút cuối.'],breath:'Thở đều, dùng bài kiểm tra trò chuyện.',avoid:'Nếu hụt hơi bất thường, dừng và nghỉ.',alternatives:['bike','treadmill']}
 };
-export const EXERCISES = {...CORE_EXERCISES,...EXTRA_EXERCISES};
+export const EXERCISES = {...CORE_EXERCISES,...EXTRA_EXERCISES,...EXTRA_CARDIO};
+for(const id of ['bike','treadmill','elliptical']){
+  Object.assign(EXERCISES[id],{
+    cardioCategory:'machine',primaryMuscle:'Tim mạch · sức bền',secondaryMuscles:'Chân, mông',
+    duration:EXERCISES[id].reps,intensity:'Vừa'
+  });
+}
 const FOCUS_SESSIONS = Object.fromEntries(Object.entries(FOCUS_TEMPLATES).map(([id,template])=>{
   const group=MUSCLE_GROUPS.find(x=>x.id===template.groupId);
   return [id,{name:`Chuyên ${group.name}`,title:template.title,kind:'strength',time:'35–50 phút',accent:'lime',icon:group.icon,description:`Buổi ưu tiên ${group.name.toLowerCase()}: 4–5 bài được chọn cho người mới. Tùy ý đổi hoặc thêm bài.`,groupId:group.id,exerciseIds:[...template.exerciseIds]}];
@@ -49,7 +57,12 @@ const FOCUS_SESSIONS = Object.fromEntries(Object.entries(FOCUS_TEMPLATES).map(([
 export const SESSIONS={
   A:{name:'Full Body A',title:'Xây nền tảng',kind:'strength',time:'40–45 phút',accent:'lime',icon:'🏋️',description:'Máy tập dễ làm quen · chân, ngực, lưng và core',exerciseIds:['legPress','chestPress','latPull','legCurl','deadBug']},
   B:{name:'Full Body B',title:'Tăng sức mạnh',kind:'strength',time:'40–45 phút',accent:'purple',icon:'💪',description:'Thân dưới, lưng, vai và ổn định cột sống',exerciseIds:['goblet','seatedRow','gluteBridge','shoulderPress','deadBug']},
-  C:{name:'Cardio nhẹ',title:'Tim mạch & hồi phục',kind:'cardio',time:'25–30 phút',accent:'aqua',icon:'🚶',description:'Đi bộ máy 0–2% dốc, theo tuần và talk test',exerciseIds:['treadmill']},
+  C:{name:'Đi bộ máy',title:'Tim mạch & hồi phục',kind:'cardio',time:'20–30 phút',accent:'aqua',icon:'🚶',description:'Đi bộ máy 0–2% dốc, tăng thời lượng trước, theo talk test.',exerciseIds:['treadmill'],cardioMode:'steady'},
+  D:{name:'Xe đạp bền',title:'Đạp đều, ít tác động khớp',kind:'cardio',time:'20–30 phút',accent:'aqua',icon:'🚲',description:'5 phút làm nóng + 15–20 phút đạp đều nhẹ + 5 phút thả lỏng; duy trì talk test.',exerciseIds:['bike'],cardioMode:'steady'},
+  E:{name:'Elliptical',title:'Cardio toàn thân, ít va chạm',kind:'cardio',time:'20–25 phút',accent:'aqua',icon:'🚶',description:'Máy Elliptical kháng lực thấp; tăng thời lượng trước khi tăng lực.',exerciseIds:['elliptical'],cardioMode:'steady'},
+  F:{name:'Chèo thuyền nhẹ',title:'Kỹ thuật trước, bền sức sau',kind:'cardio',time:'15–20 phút',accent:'aqua',icon:'🚣',description:'Máy Rowing: làm quen kỹ thuật rồi chèo nhẹ, không kéo giật hay sprint.',exerciseIds:['mRow'],cardioMode:'steady'},
+  G:{name:'Bodyweight cardio',title:'Circuit không nhảy',kind:'cardio',time:'18–22 phút',accent:'aqua',icon:'🏃',description:'5 phút khởi động, 2 vòng × 4 bài 40 giây vận động/20 giây nghỉ; 5 phút thả lỏng.',exerciseIds:['bwMarch','bwStepTouch','bwWalkJacks','bwShadowbox'],cardioMode:'circuit'},
+  H:{name:'Cardio với dụng cụ',title:'Step, dây và tạ thật nhẹ',kind:'cardio',time:'20–25 phút',accent:'aqua',icon:'🪜',description:'5 phút khởi động, 2 vòng × 4 bài 45 giây vận động/30 giây nghỉ; thả lỏng 5 phút.',exerciseIds:['gearStepUp','gearToeTap','gearBandWalk','gearMedCarry'],cardioMode:'circuit'},
   ...FOCUS_SESSIONS
 };
 export const RESOURCES=[

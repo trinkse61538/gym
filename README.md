@@ -1,10 +1,53 @@
+# GymOS v3.0 — Cardio & Endurance (211 bài tập)
+
+Bản v3.0 nâng cấp trực tiếp từ v2.0 và tương thích dữ liệu `localStorage` / backup JSON hiện có.
+
+**Mới trong v3:**
+- **36 lựa chọn cardio**, chia thành **12 máy cardio**, **12 bodyweight không cần dụng cụ**, **12 bài dùng dụng cụ phòng gym**. Cùng 175 bài khác từ v2, tổng cộng **211 bài**.
+- **6 mẫu buổi cardio**: đi bộ máy, xe đạp, elliptical, rowing nhẹ, circuit bodyweight không nhảy, circuit với dụng cụ. Có thể thêm/bỏ bài cardio theo máy/dụng cụ thực tế, tối đa 6 bài/buổi.
+- Mỗi bài có cách thực hiện 3 bước, thiết bị, cơ/vùng vận động, nhịp thở, điều cần tránh, bài thay thế và **link tìm kiếm video theo tên bài** (không phải video đã thẩm định). Bài nâng cao được đánh dấu rõ và không tự xuất hiện trong mẫu cho người mới.
+- Theo dõi **phút tập, RPE 0–10, nhịp/tốc độ, độ dốc, mức kháng lực và thông số circuit khi phù hợp**. Tích hoàn thành từng bài, ghi chú và nhật ký; thống kê tổng phút cardio.
+- **Lịch tuần:** hoàn thành *bất kỳ* cardio nào (C/D/E/F/G/H) sẽ tính vào ô cardio tuần, không tự bắt bạn tập thêm buổi treadmill. Buổi cardio không bị tính nhầm vào 2 buổi tạ. Lưu dữ liệu trên thiết bị và có xuất/nhập JSON.
+- **PWA responsive** và hỗ trợ offline đối với nội dung đã cache. Video và liên kết bên ngoài cần Internet.
+
+### Lưu ý về cường độ và an toàn
+
+Cardio **không chỉ là bodyweight**: máy tập, vận động không tạ và circuit dụng cụ đều có thể rèn sức bền tim mạch tùy cách thực hiện và mức gắng sức. Với người ít tập, bắt đầu 1–2 buổi × 15–25 phút, RPE khoảng 3–4/10 hoặc theo *talk test*, vẫn nói được trọn câu. Tăng thời lượng trước khi tăng cường độ, hướng tới 150 phút aerobic vừa mỗi tuần theo khả năng và hướng dẫn y tế phù hợp.
+
+Nếu từng có vấn đề về nhịp tim, hen suyễn hoặc triệu chứng khi vận động, nên trao đổi với bác sĩ về mức tập phù hợp trước khi tăng cường độ, đặc biệt với bài sức bền mạnh/HIIT. Dừng khi đau ngực, choáng, khó thở bất thường, hồi hộp hoặc tim đập không đều; tìm hỗ trợ y tế khi cần. Chưa nên tự chọn battle rope/sled/jump rope để tập mạnh khi chưa làm quen.
+
+### Nâng cấp từ repository đã tồn tại (Mac Terminal)
+
+1. Trên GymOS phiên bản đang dùng, vào **Cài đặt & dữ liệu → Xuất JSON** để sao lưu.
+2. Tải ZIP v3 và đặt ở `~/Documents/`, ví dụ `GymOS_PWA_v3_Cardio_Endurance_GitHubReady.zip`.
+3. Trong Terminal:
+
+```bash
+cd ~/Documents/gym-source
+git pull --ff-only origin main
+unzip -o ~/Documents/GymOS_PWA_v3_Cardio_Endurance_GitHubReady.zip -d .
+git add -A
+git commit -m "GymOS v3 - cardio endurance library"
+git push origin main
+```
+
+4. Chờ GitHub Pages deploy, mở `gym.khaitringuyen.com` bằng HTTPS, tải lại trang một lần khi có mạng; PWA có thể cần mở lại sau cập nhật.
+
+**Quan trọng:** ZIP chứa các file ngay thư mục gốc, không lồng thư mục `gym-os-v3/`. Không đưa PDF bệnh án hoặc dữ liệu tập luyện xuất ra dưới dạng JSON lên repository public.
+
+### Kiểm thử
+
+Chạy `npm test` (Node 20+): kiểm thử bộ dữ liệu và thuật toán lịch. `python3 -m http.server 8000` để chạy local, không cần build.
+
+---
+
 # GymOS — Personal Training PWA
 
 Web app responsive và PWA tiếng Việt, dành cho người mới tập gym, có thể triển khai ngay qua GitHub Pages và `gym.khaitringuyen.com`.
 
 ## Những gì app làm được
 
-- **Lịch tập tự điều chỉnh:** 2 buổi sức mạnh Full Body A / B, 1 buổi đi bộ máy, ưu tiên giữ ít nhất 48 giờ giữa các buổi toàn thân. Nếu đánh dấu *Bỏ buổi*, các buổi chưa tập được dời trong tuần; nếu không đủ chỗ, để lại buổi chưa xếp và tiếp tục xoay A/B vào tuần kế tiếp. **Không tự dồn hai buổi tạ liền nhau.**
+- **Lịch tập tự điều chỉnh:** 2 buổi sức mạnh Full Body A / B, 1 buổi cardio linh hoạt (mặc định đi bộ máy), ưu tiên giữ ít nhất 48 giờ giữa các buổi toàn thân. Nếu đánh dấu *Bỏ buổi*, các buổi chưa tập được dời trong tuần; nếu không đủ chỗ, để lại buổi chưa xếp và tiếp tục xoay A/B vào tuần kế tiếp. **Không tự dồn hai buổi tạ liền nhau.**
 - **Thư viện bài tập:** chỉ dẫn tiếng Việt theo từng bước, cách thở, lỗi thường gặp, set/rep và nghỉ; mở đường dẫn video hoặc minh họa có chuyển động, chọn bài thay thế.
 - **Nhật ký:** tick set, ghi rep và kg, lưu thời gian tập, mức gắng sức, ghi chú, xem lại/sửa/xóa buổi. Có đồng hồ nghỉ set.
 - **Treadmill:** tuần làm quen 5' ở 3–3,5 km/h dốc 0%; 10–15' ở 3,8–4,5 km/h dốc 0–1%; 5' ở 2,8–3,2 km/h dốc 0%. Khi đã có ít nhất 3 buổi cardio và đã trải qua 14 ngày mới hiển thị pha nâng dần (4,2–5 km/h, dốc 1–2%). Đây là **gợi ý**, giảm ngay khi cảm thấy không phù hợp.

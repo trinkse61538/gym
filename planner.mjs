@@ -10,7 +10,9 @@ export const longDate = (s) => parse(s).toLocaleDateString('vi-VN',{weekday:'lon
 const DAYS = ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','Chủ nhật'];
 export { DAYS };
 
-export const isStrength = type => Boolean(type && type !== 'C');
+export const CARDIO_TYPES = Object.freeze(['C','D','E','F','G','H']);
+export const isCardio = type => CARDIO_TYPES.includes(type);
+export const isStrength = type => Boolean(type && !isCardio(type));
 function lastStrengthBefore(logs, firstDay) {
   const previous = Object.entries(logs||{}).filter(([date, log]) => date < firstDay && log?.completed && isStrength(log.type)).sort((a,b)=>b[0].localeCompare(a[0]));
   return previous.length ? {date:previous[0][0], type:previous[0][1].type} : null;
@@ -30,7 +32,7 @@ export function buildWeek(start, today, state={}) {
   const dates=days(start), end=dates[6], entries=Object.fromEntries(dates.map((d,i)=>[d,{date:d, day:DAYS[i], kind:'rest', type:null}]));
   const inWeek = dates.map(d=>({date:d, log: logs[d]})).filter(x=>x.log?.completed);
   const completed = inWeek.map(x=>x.log.type);
-  const doneA=completed.includes('A'),doneB=completed.includes('B'),doneC=completed.includes('C');
+  const doneA=completed.includes('A'),doneB=completed.includes('B'),doneC=completed.some(isCardio);
   const lastPrev=lastStrengthBefore(logs,start);
   const strengthDone=inWeek.filter(x=>isStrength(x.log.type)).sort((a,b)=>a.date.localeCompare(b.date));
   const priorAB=lastABBefore(logs,start);
@@ -76,7 +78,7 @@ export function buildWeek(start, today, state={}) {
     else if(skips[d]) entries[d]={...entries[d],kind:'skipped',type:null};
     else if(d<today && entries[d].kind==='rest') entries[d]={...entries[d],kind:'past',type:null};
   }
-  const unplanned=[...nextOrder,'C'].filter(t=>!completed.includes(t)&&!planned.some(p=>p.type===t));
+  const unplanned=[...nextOrder,...(doneC?[]:['C'])].filter(t=>!completed.includes(t)&&!planned.some(p=>p.type===t));
   const doneStrength=completed.filter(isStrength).length;
   return {start,end,days:dates.map(d=>entries[d]),planned:planned.sort((a,b)=>a.date.localeCompare(b.date)),completed:inWeek.length,doneStrength,unplanned,doneTypes:completed, future:end>=today, todayInWeek:start<=today && today<=end};
 }
@@ -86,7 +88,8 @@ export function weeklyStats(logs={}, referenceDay=iso(new Date())){
   const keys=Object.keys(logs).filter(d=>logs[d]?.completed).sort();
   const total=keys.length;
   const strength=keys.filter(d=>isStrength(logs[d].type)).length;
-  const cardio=keys.filter(d=>logs[d].type==='C').length;
+  const cardio=keys.filter(d=>isCardio(logs[d].type)).length;
+  const cardioMinutes=keys.filter(d=>isCardio(logs[d].type)).reduce((n,d)=>n+Math.max(0,Number(logs[d].minutes)||0),0);
   let streak=0;
   for (let i=0;i<104;i++){
     const s=move(thisMon,-7*i), e=move(s,6);
@@ -94,5 +97,5 @@ export function weeklyStats(logs={}, referenceDay=iso(new Date())){
     if(i===0&&n===0) continue;
     if(n>=2)streak++;else break;
   }
-  return {total,strength,cardio,streak};
+  return {total,strength,cardio,cardioMinutes,streak};
 }
