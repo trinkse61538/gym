@@ -63,6 +63,12 @@ export const SESSIONS={
   F:{name:'Chèo thuyền nhẹ',title:'Kỹ thuật trước, bền sức sau',kind:'cardio',time:'15–20 phút',accent:'aqua',icon:'🚣',description:'Máy Rowing: làm quen kỹ thuật rồi chèo nhẹ, không kéo giật hay sprint.',exerciseIds:['mRow'],cardioMode:'steady'},
   G:{name:'Bodyweight cardio',title:'Circuit không nhảy',kind:'cardio',time:'18–22 phút',accent:'aqua',icon:'🏃',description:'5 phút khởi động, 2 vòng × 4 bài 40 giây vận động/20 giây nghỉ; 5 phút thả lỏng.',exerciseIds:['bwMarch','bwStepTouch','bwWalkJacks','bwShadowbox'],cardioMode:'circuit'},
   H:{name:'Cardio với dụng cụ',title:'Step, dây và tạ thật nhẹ',kind:'cardio',time:'20–25 phút',accent:'aqua',icon:'🪜',description:'5 phút khởi động, 2 vòng × 4 bài 45 giây vận động/30 giây nghỉ; thả lỏng 5 phút.',exerciseIds:['gearStepUp','gearToeTap','gearBandWalk','gearMedCarry'],cardioMode:'circuit'},
+
+  I:{name:'Cardio máy luân phiên',title:'3 máy đổi nhịp',kind:'cardio',time:'24–30 phút',accent:'aqua',icon:'🔄',description:'Khởi động 5 phút rồi đổi 2–3 máy cardio nhịp vừa để bớt chán và ít quá tải một nhóm cơ.',exerciseIds:['mTreadIncline','mRecumbent','mArc'],cardioMode:'steady'},
+  J:{name:'Tempo xe đạp + chèo',title:'Biến thiên nhẹ, không HIIT',kind:'cardio',time:'20–25 phút',accent:'aqua',icon:'🚴',description:'Luân phiên nhịp thoải mái và nhịp hơi nhanh hơn nhưng vẫn nói được; thiên về sức bền, không bào sức.',exerciseIds:['mBikeIntervals','mRowIntervals'],cardioMode:'steady'},
+  K:{name:'Bodyweight flow',title:'Cardio không máy',kind:'cardio',time:'18–22 phút',accent:'aqua',icon:'🤸',description:'Circuit low-impact gồm fast feet, shuffle, standing climber và squat chạm cao.',exerciseIds:['bwFastFeet','bwLateralShuffle','bwStandingClimber','bwReachSquat'],cardioMode:'circuit'},
+  L:{name:'Dụng cụ cardio mix',title:'Step, plate, band, slam',kind:'cardio',time:'18–24 phút',accent:'aqua',icon:'🏃',description:'Circuit với bục, đĩa tạ nhẹ, bóng y tế và dây kháng lực để tăng nhịp tim mà vẫn vui hơn đi máy đơn điệu.',exerciseIds:['gearStepKneeDrive','gearPlateMarch','gearBandPunch','gearMedicineSlam'],cardioMode:'circuit'},
+  M:{name:'Carry & core cardio',title:'Di chuyển có tải nhẹ',kind:'cardio',time:'16–22 phút',accent:'aqua',icon:'🧳',description:'Các bài xách tạ/bao cát nhẹ và di chuyển giúp tăng nhịp tim mà không cần bật nhảy nhiều.',exerciseIds:['gearSandbagCarry','gearFarmer','bwBearMarch','bwToeReach'],cardioMode:'circuit'},
   ...FOCUS_SESSIONS
 };
 export const RESOURCES=[

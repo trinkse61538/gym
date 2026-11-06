@@ -962,5 +962,586 @@ export const EXTRA_CARDIO = {
     "duration": "20–40 giây/lượt",
     "intensity": "Mạnh",
     "details": ""
-  }
+  },
+
+"mUprightBike": {
+  "name": "Upright Bike — Steady",
+  "vi": "Xe đạp ngồi thẳng",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Xe đạp upright",
+  "sets": 1,
+  "reps": "18–28 phút",
+  "rest": 0,
+  "icon": "🚴",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=Upright%20Bike%20beginner%20proper%20form",
+  "steps": [
+    "Chỉnh yên để đầu gối còn hơi gập ở điểm thấp nhất.",
+    "Đạp nhẹ và đều trong 5 phút đầu, sau đó tăng nhịp vừa sức.",
+    "Giữ vai thả lỏng, thân ổn định và giảm dần tốc độ 3–5 phút cuối."
+  ],
+  "breath": "Thở đều; vẫn nên nói được câu đầy đủ.",
+  "avoid": "Không nhón vai hoặc đạp quá nặng ngay từ đầu.",
+  "alternatives": [
+    "bike",
+    "mRecumbent"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, thân giữa",
+  "duration": "18–28 phút",
+  "intensity": "Nhẹ",
+  "details": ""
+},
+"mSpinSeated": {
+  "name": "Spin Bike — Seated Easy",
+  "vi": "Xe đạp spin ngồi yên",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Xe đạp spin",
+  "sets": 1,
+  "reps": "15–22 phút",
+  "rest": 0,
+  "icon": "🚲",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=spin%20bike%20beginner%20seated%20form",
+  "steps": [
+    "Điều chỉnh yên và tay lái sao cho lưng không quá gập.",
+    "Đạp ngồi yên, kháng lực nhẹ đến vừa; ưu tiên vòng quay mượt.",
+    "Không đứng đạp nếu mới tập hoặc khi đầu gối còn nhạy cảm."
+  ],
+  "breath": "Thở nhịp nhàng, tránh gồng vai và cổ.",
+  "avoid": "Không tăng đồng thời cả tốc độ lẫn kháng lực quá nhanh.",
+  "alternatives": [
+    "bike",
+    "mUprightBike"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, thân giữa",
+  "duration": "15–22 phút",
+  "intensity": "Vừa",
+  "details": ""
+},
+"mRowIntervals": {
+  "name": "Rowing Ergometer — Gentle Alternation",
+  "vi": "Máy chèo — đổi nhịp nhẹ",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Máy chèo thuyền",
+  "sets": 1,
+  "reps": "12–18 phút",
+  "rest": 0,
+  "icon": "🚣",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=rowing%20ergometer%20beginner%20intervals%20form",
+  "steps": [
+    "Khởi động 3–4 phút ở nhịp rất nhẹ.",
+    "Lặp 4–5 vòng: 90 giây chèo thoải mái + 30 giây nhanh hơn một chút nhưng vẫn kiểm soát kỹ thuật.",
+    "Kết thúc bằng 3 phút chèo nhẹ, ưu tiên trình tự chân–thân–tay."
+  ],
+  "breath": "Thở ra khi đẩy chân và kéo tay, hít vào khi trở về.",
+  "avoid": "Không biến thành HIIT; kỹ thuật quan trọng hơn tốc độ.",
+  "alternatives": [
+    "mRow",
+    "bike"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, lưng, thân giữa",
+  "duration": "12–18 phút",
+  "intensity": "Vừa",
+  "details": ""
+},
+"mEllipticalReverse": {
+  "name": "Elliptical — Reverse Stride",
+  "vi": "Elliptical bước lùi",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Máy Elliptical",
+  "sets": 1,
+  "reps": "12–20 phút",
+  "rest": 0,
+  "icon": "↩️",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=elliptical%20reverse%20stride%20beginner",
+  "steps": [
+    "Bắt đầu 3 phút bước xuôi với kháng lực thấp.",
+    "Chuyển sang bước lùi chậm 5–10 phút để đổi cảm giác ở đùi và mông.",
+    "Giữ thân thẳng, bám tay cầm nhẹ và giảm dần tốc độ cuối buổi."
+  ],
+  "breath": "Thở đều, duy trì mức có thể trò chuyện.",
+  "avoid": "Không vặn gối hoặc nhún người theo tay cầm.",
+  "alternatives": [
+    "elliptical",
+    "mArc"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, mông",
+  "duration": "12–20 phút",
+  "intensity": "Vừa",
+  "details": ""
+},
+"mTreadTempo": {
+  "name": "Treadmill Tempo Walk",
+  "vi": "Đi bộ máy đổi nhịp",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Máy chạy bộ",
+  "sets": 1,
+  "reps": "18–26 phút",
+  "rest": 0,
+  "icon": "🚶",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=treadmill%20tempo%20walk%20beginner",
+  "steps": [
+    "Khởi động 5 phút ở 3,2–3,8 km/h dốc 0–1%.",
+    "Lặp 4–6 vòng: 2 phút ở nhịp thoải mái + 1 phút nhanh hơn chút nhưng vẫn nói được câu ngắn.",
+    "Thả lỏng 4–5 phút ở tốc độ chậm hơn."
+  ],
+  "breath": "Thở tự nhiên; nếu phải ngắt câu để thở, giảm tốc độ.",
+  "avoid": "Không bám tay vịn liên tục hoặc cố tăng dốc cao.",
+  "alternatives": [
+    "treadmill",
+    "mTreadIncline"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, thân giữa",
+  "duration": "18–26 phút",
+  "intensity": "Vừa",
+  "details": ""
+},
+"mStairIntervalsEasy": {
+  "name": "Stair Climber — Step & Recover",
+  "vi": "Máy leo cầu thang đổi nhịp",
+  "group": "Tim mạch",
+  "cardioCategory": "machine",
+  "equipment": "Máy Stair Climber",
+  "sets": 1,
+  "reps": "10–16 phút",
+  "rest": 0,
+  "icon": "🪜",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=stair%20climber%20beginner%20intervals",
+  "steps": [
+    "Đi 2 phút rất nhẹ để làm quen bậc thang.",
+    "Lặp 5 vòng: 45 giây bước chủ động hơn + 75 giây hồi phục chậm.",
+    "Giữ thân thẳng và chỉ vịn nhẹ để cân bằng."
+  ],
+  "breath": "Thở đều, xuống nhịp ngay khi quá gắng sức.",
+  "avoid": "Không lao người lên tay vịn hoặc bước quá dài.",
+  "alternatives": [
+    "mStair",
+    "mRecumbent"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, mông",
+  "duration": "10–16 phút",
+  "intensity": "Vừa",
+  "details": ""
+},
+"bwFastFeet": {
+  "name": "Fast Feet in Place",
+  "vi": "Chạy bước ngắn tại chỗ",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "30–45 giây mỗi hiệp",
+  "rest": 15,
+  "icon": "⚡",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=fast%20feet%20exercise%20beginner",
+  "steps": [
+    "Đứng gối hơi chùng, thân thẳng, tay đánh nhẹ.",
+    "Di chuyển bàn chân nhanh và ngắn tại chỗ, giữ nhịp đều.",
+    "Sau hiệp, đi bộ tại chỗ 15–20 giây để hồi phục."
+  ],
+  "breath": "Thở ngắn và đều, không gồng cổ vai.",
+  "avoid": "Không nhảy quá cao hoặc dậm chân quá mạnh.",
+  "alternatives": [
+    "bwMarch",
+    "bwStepTouch"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, bắp chân",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"bwLateralShuffle": {
+  "name": "Lateral Shuffle — Low Impact",
+  "vi": "Di chuyển ngang thấp tác động",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "30–40 giây mỗi hiệp",
+  "rest": 20,
+  "icon": "↔️",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=lateral%20shuffle%20low%20impact",
+  "steps": [
+    "Đứng chân rộng hơn vai một chút, gối mềm.",
+    "Di chuyển ngang 2–3 bước rồi quay lại, giữ ngực hướng trước.",
+    "Đánh tay tự nhiên để giữ nhịp tim tăng vừa phải."
+  ],
+  "breath": "Thở đều qua mũi-miệng, không nín thở khi đổi hướng.",
+  "avoid": "Không xoay gối vào trong hoặc trượt chân trên mặt sàn trơn.",
+  "alternatives": [
+    "bwSideSteps",
+    "bwStepTouch"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Đùi, mông",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"bwStandingClimber": {
+  "name": "Standing Mountain Climber",
+  "vi": "Leo núi đứng",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "30–45 giây mỗi hiệp",
+  "rest": 15,
+  "icon": "⛰️",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=standing%20mountain%20climber%20beginner",
+  "steps": [
+    "Đứng thẳng, hai tay chống trước như đang dựa tường vô hình.",
+    "Luân phiên kéo gối lên gần ngực với tốc độ vừa phải.",
+    "Giữ thân hơi nghiêng trước, bụng gồng nhẹ và đáp chân êm."
+  ],
+  "breath": "Thở đều theo nhịp bước chân, giảm tốc khi hụt hơi.",
+  "avoid": "Không kéo gối quá cao làm mất thăng bằng.",
+  "alternatives": [
+    "bwMarch",
+    "bwKneeLift"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Bụng, gập hông",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Nhẹ",
+  "details": ""
+},
+"bwReachSquat": {
+  "name": "Reach Squat",
+  "vi": "Squat chạm cao",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "12–18 lần hoặc 30–40 giây",
+  "rest": 20,
+  "icon": "⬆️",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=reach%20squat%20beginner",
+  "steps": [
+    "Đứng chân rộng bằng vai, ngồi squat nông vừa sức.",
+    "Đứng lên và đồng thời vươn hai tay cao qua đầu.",
+    "Giữ nhịp mượt, không cần xuống quá sâu."
+  ],
+  "breath": "Hít vào khi hạ, thở ra khi đứng lên vươn tay.",
+  "avoid": "Không sụp đầu gối vào trong hoặc bật nhảy khi chưa cần.",
+  "alternatives": [
+    "bwMarch",
+    "bwFastFeet"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Đùi, mông, vai",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"bwWalkout": {
+  "name": "Walkout to Plank",
+  "vi": "Cúi đi tay ra plank",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Thảm tập",
+  "sets": 1,
+  "reps": "6–10 lần",
+  "rest": 20,
+  "icon": "🪱",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=walkout%20to%20plank%20beginner",
+  "steps": [
+    "Từ đứng, gập hông chạm tay xuống sàn trong biên độ thoải mái.",
+    "Đi tay ra trước đến tư thế plank cao, giữ 1 nhịp rồi đi tay về.",
+    "Đứng dậy chậm, giữ bụng gồng nhẹ."
+  ],
+  "breath": "Thở ra khi đi tay ra hoặc đứng lên, hít vào khi trở về.",
+  "avoid": "Không khóa gối cứng hoặc võng lưng ở plank.",
+  "alternatives": [
+    "bwStandingClimber",
+    "bwMarch"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Vai, core, gân kheo",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"bwBearMarch": {
+  "name": "Bear Hover March",
+  "vi": "Gấu bò tại chỗ",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Thảm tập",
+  "sets": 1,
+  "reps": "20–30 giây mỗi hiệp",
+  "rest": 25,
+  "icon": "🐻",
+  "difficulty": "Nâng cao",
+  "video": "https://www.youtube.com/results?search_query=bear%20hover%20march%20beginner",
+  "steps": [
+    "Vào tư thế bốn điểm, nâng gối cách sàn vài centimet.",
+    "Luân phiên nhấc nhẹ tay và chân đối diện hoặc chỉ di chuyển bước nhỏ tại chỗ.",
+    "Giữ lưng tương đối phẳng và cổ trung tính."
+  ],
+  "breath": "Thở ngắn và đều, giảm thời gian hiệp nếu bụng rung quá nhiều.",
+  "avoid": "Không nhô hông quá cao hoặc nín thở.",
+  "alternatives": [
+    "deadBug",
+    "bwStandingClimber"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Core, vai, đùi",
+  "duration": "6–10 phút theo circuit",
+  "intensity": "Mạnh",
+  "details": ""
+},
+"bwBoxerBounce": {
+  "name": "Boxer Bounce",
+  "vi": "Nhún chân kiểu boxing",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "30–45 giây mỗi hiệp",
+  "rest": 15,
+  "icon": "🥊",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=boxer%20bounce%20beginner",
+  "steps": [
+    "Đứng nhẹ trên mũi bàn chân, đổi trọng lượng qua lại.",
+    "Giữ hai tay ở tư thế thủ cơ bản và nhún thật nhẹ.",
+    "Có thể kết hợp đấm thẳng chậm để tăng nhịp tim."
+  ],
+  "breath": "Thở đều, thả lỏng hàm và vai.",
+  "avoid": "Không nhảy quá cao hoặc dậm gót mạnh xuống sàn.",
+  "alternatives": [
+    "bwShadowbox",
+    "bwFastFeet"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Bắp chân, vai",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Nhẹ",
+  "details": ""
+},
+"bwToeReach": {
+  "name": "Alternating Toe Reach",
+  "vi": "Chạm mũi chân luân phiên",
+  "group": "Tim mạch",
+  "cardioCategory": "bodyweight",
+  "equipment": "Không dụng cụ",
+  "sets": 1,
+  "reps": "30–40 giây mỗi hiệp",
+  "rest": 15,
+  "icon": "🦶",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=alternating%20toe%20reach%20exercise",
+  "steps": [
+    "Đứng thẳng, luân phiên đá nhẹ chân trước và chạm tay đối diện vào mũi chân.",
+    "Giữ ngực nâng và biên độ vừa phải để không kéo căng gân kheo quá mức.",
+    "Duy trì nhịp đều như một bài warm-up năng động."
+  ],
+  "breath": "Thở đều theo nhịp đổi chân.",
+  "avoid": "Không cúi gập lưng quá sâu hoặc khóa cứng gối.",
+  "alternatives": [
+    "bwMarch",
+    "bwHeelDig"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Đùi sau, vai, core",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Nhẹ",
+  "details": ""
+},
+"gearMedicineSlam": {
+  "name": "Medicine Ball Slam — Light",
+  "vi": "Đập bóng y tế nhẹ",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Bóng y tế mềm",
+  "sets": 1,
+  "reps": "8–12 lần hoặc 20–30 giây",
+  "rest": 25,
+  "icon": "🏐",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=medicine%20ball%20slam%20light%20beginner",
+  "steps": [
+    "Chọn bóng đủ nhẹ để kiểm soát toàn bộ động tác.",
+    "Nâng bóng lên quá đầu vừa phải, siết bụng rồi đập xuống sàn trước mặt.",
+    "Nhặt bóng bằng cách gập hông và gối, không chỉ cúi lưng."
+  ],
+  "breath": "Thở ra mạnh khi đập bóng, hít vào khi nâng bóng lên.",
+  "avoid": "Không dùng bóng quá nặng hoặc đập khi lưng đang khó chịu.",
+  "alternatives": [
+    "gearRopes",
+    "gearBandPunch"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Vai, core, chân",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"gearSandbagCarry": {
+  "name": "Sandbag Carry",
+  "vi": "Xách bao cát đi bộ",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Sandbag hoặc túi cát mềm",
+  "sets": 1,
+  "reps": "20–40 giây mỗi hiệp",
+  "rest": 20,
+  "icon": "🧳",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=sandbag%20carry%20beginner",
+  "steps": [
+    "Ôm hoặc vác túi cát nhẹ ở vị trí ổn định.",
+    "Đi bước ngắn và đều, giữ ngực cao, thân chắc.",
+    "Đổi bên ôm/vác giữa các hiệp để cân bằng tải."
+  ],
+  "breath": "Thở đều từng bước, tránh nín thở khi nhấc túi.",
+  "avoid": "Không chọn tải quá nặng làm lệch người nhiều.",
+  "alternatives": [
+    "gearFarmer",
+    "core20"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Core, tay, chân",
+  "duration": "10–15 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"gearConeShuffle": {
+  "name": "Cone Shuffle",
+  "vi": "Shuffle qua cọc mốc",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Cọc mốc / marker",
+  "sets": 1,
+  "reps": "20–30 giây mỗi hiệp",
+  "rest": 20,
+  "icon": "📍",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=cone%20shuffle%20exercise%20beginner",
+  "steps": [
+    "Đặt 2–4 mốc cách nhau 1–2 mét.",
+    "Di chuyển ngang hoặc tiến-lùi qua các mốc với bước ngắn, gối hơi chùng.",
+    "Giữ mắt nhìn trước, tốc độ vừa phải và đổi hướng có kiểm soát."
+  ],
+  "breath": "Thở đều, giảm nhịp ngay khi mất kiểm soát chân.",
+  "avoid": "Không xoay gối đột ngột hoặc đi trên mặt sàn trơn.",
+  "alternatives": [
+    "gearLadder",
+    "bwLateralShuffle"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Chân, mông, core",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"gearPlateMarch": {
+  "name": "Plate Front Carry March",
+  "vi": "Ôm đĩa tạ bước tại chỗ",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Đĩa tạ nhẹ",
+  "sets": 1,
+  "reps": "30–45 giây mỗi hiệp",
+  "rest": 20,
+  "icon": "🛡️",
+  "difficulty": "Dễ",
+  "video": "https://www.youtube.com/results?search_query=plate%20front%20carry%20march",
+  "steps": [
+    "Ôm một đĩa tạ nhẹ trước ngực bằng hai tay.",
+    "Bước tại chỗ nâng gối vừa phải, giữ thân ổn định.",
+    "Có thể đi bộ chậm nếu có không gian."
+  ],
+  "breath": "Thở đều theo nhịp bước và giữ xương sườn không phồng quá mức.",
+  "avoid": "Không ôm tạ quá nặng làm vai và lưng gù.",
+  "alternatives": [
+    "gearKettleMarch",
+    "bwMarch"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Core, chân, vai",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Nhẹ",
+  "details": ""
+},
+"gearStepKneeDrive": {
+  "name": "Step-Up Knee Drive",
+  "vi": "Bước bục kèm kéo gối",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Bục thấp hoặc aerobic step",
+  "sets": 1,
+  "reps": "20–30 giây mỗi bên",
+  "rest": 20,
+  "icon": "🪜",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=step%20up%20knee%20drive%20beginner",
+  "steps": [
+    "Đặt một chân lên bục thấp, dồn lực qua chân trụ để bước lên.",
+    "Khi đứng gần thẳng, kéo gối chân còn lại lên trước bụng.",
+    "Bước xuống chậm và đổi bên theo hiệp hoặc sau mỗi rep."
+  ],
+  "breath": "Thở ra khi bước lên và kéo gối, hít vào khi xuống.",
+  "avoid": "Không dùng bục quá cao hoặc dậm mạnh xuống sàn.",
+  "alternatives": [
+    "gearStepUp",
+    "stepUp"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Đùi, mông, core",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+},
+"gearBandPunch": {
+  "name": "Band Punch-Out",
+  "vi": "Đấm thẳng với dây kháng lực",
+  "group": "Tim mạch",
+  "cardioCategory": "equipment",
+  "equipment": "Dây kháng lực neo sau lưng",
+  "sets": 1,
+  "reps": "20–30 giây mỗi hiệp",
+  "rest": 20,
+  "icon": "🥊",
+  "difficulty": "Cơ bản",
+  "video": "https://www.youtube.com/results?search_query=band%20punch%20out%20beginner",
+  "steps": [
+    "Neo dây ở sau lưng hoặc vòng nhẹ qua lưng, giữ hai đầu dây trong tay.",
+    "Đấm thẳng luân phiên hoặc hai tay cùng lúc với nhịp nhanh vừa phải.",
+    "Giữ chân đứng vững, thân không xoay quá mạnh."
+  ],
+  "breath": "Thở ngắn theo nhịp đấm, giữ vai thấp và hàm thả lỏng.",
+  "avoid": "Không dùng dây quá nặng làm cổ vai gồng cứng.",
+  "alternatives": [
+    "bwShadowbox",
+    "gearRopes"
+  ],
+  "primaryMuscle": "Tim mạch · sức bền",
+  "secondaryMuscles": "Vai, ngực, core",
+  "duration": "8–12 phút theo circuit",
+  "intensity": "Vừa",
+  "details": ""
+}
 };
