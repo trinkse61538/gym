@@ -11,13 +11,16 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
   <link rel="apple-touch-icon" href="./assets/icon-192.png">
-  <title>GymOS 3.0 — Personal Training</title>
+  <title>GymOS 4.0 — Fitness Operating System</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body data-theme="lime">
   <div class="shell">
     <aside class="sidebar" aria-label="Điều hướng">
-      <div class="brand"><span class="brand-icon">G<span class="brand-dot">.</span></span><span class="brand-text">Gym<span>OS</span><small>PERSONAL TRAINING</small></span></div>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-mark-inner"></span></span>
+        <span class="brand-copy"><strong>Gym<span>OS</span></strong><small>TRAIN WITH INTENT</small></span>
+      </div>
       <div class="side-label">KHÔNG GIAN CỦA BẠN</div>
       <nav class="side-nav">
         <button data-nav="home" class="nav-link"><span>⌂</span> Tổng quan</button>
@@ -30,13 +33,13 @@
       <div class="sidebar-bottom">
         <div class="coach-card"><span class="coach-icon">✦</span><strong>Tiến bộ nhỏ, bền vững.</strong><p>Không cần tập hoàn hảo. Chỉ cần quay lại buổi tiếp theo.</p></div>
         <button data-nav="settings" class="nav-link"><span>⚙</span> Cài đặt & dữ liệu</button>
-        <div class="sidebar-foot">GYMOS v3.0 <span>·</span> LƯU TRÊN THIẾT BỊ</div>
+        <div class="sidebar-foot">GYMOS v4.0 <span>·</span> LƯU TRÊN THIẾT BỊ</div>
       </div>
     </aside>
     <div class="main-column">
       <header class="topbar">
-        <div class="topbar-left"><span class="topbar-mark">✦</span><span>PERSONAL TRAINING OS</span></div>
-        <div class="topbar-right"><span class="status-dot"></span><span>Hoạt động trên thiết bị</span><button class="topbar-settings" data-nav="settings" title="Cài đặt" aria-label="Cài đặt">⚙</button></div>
+        <div class="topbar-left"><span class="topbar-accent"></span><span>GYMOS&nbsp;&nbsp;FITNESS OPERATING SYSTEM</span></div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Train with intent</span><button class="topbar-settings" data-nav="settings" title="Cài đặt" aria-label="Cài đặt">⚙</button></div>
       </header>
       <main id="app" class="app-container" tabindex="-1"><div class="loading">Đang chuẩn bị lịch tập…</div></main>
       <footer class="footer"><span>Built for consistency, not perfection.</span><span>GymOS · Private by design</span></footer>

@@ -1,6 +1,8 @@
-# GymOS v3.0 — Cardio & Endurance (211 bài tập)
+# GymOS v4.0 — Brand Refresh + Theme Switcher (211 bài tập)
 
-Bản v3.0 nâng cấp trực tiếp từ v2.0 và tương thích dữ liệu `localStorage` / backup JSON hiện có.
+Bản v4.0 nâng cấp trực tiếp từ v3.0 và tương thích dữ liệu `localStorage` / backup JSON hiện có.
+
+Điểm mới: làm mới toàn bộ brand/header/sidebar theo hướng mạnh hơn, bớt cảm giác “AI demo”, đồng thời thêm bộ đổi màu giao diện (xanh lá · đen, tím · đen, cam · đen, xanh ngọc · đen).
 
 **Mới trong v3:**
 - **36 lựa chọn cardio**, chia thành **12 máy cardio**, **12 bodyweight không cần dụng cụ**, **12 bài dùng dụng cụ phòng gym**. Cùng 175 bài khác từ v2, tổng cộng **211 bài**.
