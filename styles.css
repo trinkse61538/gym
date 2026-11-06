@@ -355,3 +355,26 @@ body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
  .topbar-brand-name small{font-size:7px}
  .topbar{padding-left:16px;padding-right:14px}
 }
+
+/* v4.2 visual exercise previews */
+.exercise-list-card{padding:0;overflow:hidden;gap:0}
+.exercise-card-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;height:100%}
+.exercise-cover{aspect-ratio:16/10;background:#0f181d;overflow:hidden;border-bottom:1px solid #2c4045}
+.exercise-cover img,.exercise-visual img,.workout-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.exercise-tag-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.exercise-tag.subtle{opacity:.88}
+.exercise-head.noicon{display:block}
+.exercise-head.noicon h3{margin:0 0 4px}
+.detail-hero-visual .detail-top{align-items:center;gap:22px}
+.exercise-visual{width:min(40%,280px);min-width:180px;aspect-ratio:1/1;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#121c20;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.workout-thumb{width:84px;height:84px;flex:none;border-radius:14px;overflow:hidden;border:1px solid #36504c;background:#121c20}
+.workout-thumb.cardio-thumb{width:76px;height:76px}
+.exercise-mini-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.breath-list{margin:8px 0 0 18px;padding:0;display:grid;gap:6px}
+.breath-list li{color:#cfe2dc;line-height:1.45}
+.hint.breath-hint{font-size:12px;line-height:1.45}
+.hint.breath-hint b{margin-bottom:6px}
+.muscle-target div{display:grid;gap:3px}
+.cardio-move-title,.exercise-toggle{align-items:flex-start}
+@media(max-width:900px){.detail-hero-visual .detail-top{flex-direction:column;align-items:flex-start}.exercise-visual{width:100%;min-width:0;max-width:100%}}
+@media(max-width:750px){.exercise-card-body{padding:14px 14px 16px}.workout-thumb{width:72px;height:72px}.workout-thumb.cardio-thumb{width:68px;height:68px}.breath-list{margin-left:16px}}
