@@ -11,47 +11,48 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
   <link rel="apple-touch-icon" href="./assets/icon-192.png">
-  <title>GymOS 4.0 — Fitness Operating System</title>
+  <title>GymOS 4.1 — Train With Intent</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body data-theme="lime">
   <div class="shell">
     <aside class="sidebar" aria-label="Điều hướng">
       <div class="brand">
-        <span class="brand-mark" aria-hidden="true"><span class="brand-mark-inner"></span></span>
+        <img class="brand-mark-image" src="./assets/icon.svg" alt="" width="54" height="54">
         <span class="brand-copy"><strong>Gym<span>OS</span></strong><small>TRAIN WITH INTENT</small></span>
       </div>
       <div class="side-label">KHÔNG GIAN CỦA BẠN</div>
       <nav class="side-nav">
-        <button data-nav="home" class="nav-link"><span>⌂</span> Tổng quan</button>
-        <button data-nav="week" class="nav-link"><span>▦</span> Lịch tập tuần</button>
-        <button data-nav="cardio" class="nav-link"><span>♡</span> Cardio & sức bền</button>
-        <button data-nav="library" class="nav-link"><span>▤</span> Thư viện bài tập</button>
-        <button data-nav="history" class="nav-link"><span>◴</span> Nhật ký tập</button>
-        <button data-nav="insights" class="nav-link"><span>▥</span> Tiến độ</button>
+        <button data-nav="home" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg></span> Tổng quan</button>
+        <button data-nav="week" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span> Lịch tập tuần</button>
+        <button data-nav="cardio" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.3 12h4.3l2-3 2.6 6 2.1-3h6"/></svg></span> Cardio & sức bền</button>
+        <button data-nav="library" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6.5 6.5 3-3M14.5 14.5l3-3M5 16l-1 1a2 2 0 0 0 3 3l1-1M16 5l1-1a2 2 0 0 1 3 3l-1 1M7 17l10-10M5 5l3 3M16 16l3 3"/></svg></span> Thư viện bài tập</button>
+        <button data-nav="history" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span> Nhật ký tập</button>
+        <button data-nav="insights" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20V9M14 20V4M19 20v-9" stroke-width="3"/></svg></span> Tiến độ</button>
       </nav>
       <div class="sidebar-bottom">
         <div class="coach-card"><span class="coach-icon">✦</span><strong>Tiến bộ nhỏ, bền vững.</strong><p>Không cần tập hoàn hảo. Chỉ cần quay lại buổi tiếp theo.</p></div>
-        <button data-nav="settings" class="nav-link"><span>⚙</span> Cài đặt & dữ liệu</button>
-        <div class="sidebar-foot">GYMOS v4.0 <span>·</span> LƯU TRÊN THIẾT BỊ</div>
+        <button data-nav="settings" class="nav-link"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="m19.4 15 1.1 1.9-2 2-1.9-1.1a8 8 0 0 1-2 .8l-.5 2.3h-2.8l-.5-2.3a8 8 0 0 1-2-.8L6.9 19l-2-2L6 15.1a8 8 0 0 1-.8-2L3 12.6V9.8l2.2-.5a8 8 0 0 1 .8-2L4.9 5.4l2-2 1.9 1.1a8 8 0 0 1 2-.8l.5-2.3H14l.5 2.3a8 8 0 0 1 2 .8l1.9-1.1 2 2-1.1 1.9a8 8 0 0 1 .8 2l2.2.5v2.8l-2.2.5a8 8 0 0 1-.7 1.9z"/></svg></span> Cài đặt & dữ liệu</button>
+        <div class="sidebar-foot">GYMOS v4.1 <span>·</span> LƯU TRÊN THIẾT BỊ</div>
       </div>
     </aside>
     <div class="main-column">
       <header class="topbar">
-        <div class="topbar-left"><span class="topbar-accent"></span><span>GYMOS&nbsp;&nbsp;FITNESS OPERATING SYSTEM</span></div>
-        <div class="topbar-right"><span class="status-dot"></span><span>Train with intent</span><button class="topbar-settings" data-nav="settings" title="Cài đặt" aria-label="Cài đặt">⚙</button></div>
+        <div class="topbar-left"><span class="topbar-accent"></span><img class="topbar-brand-icon" src="./assets/icon.svg" width="30" height="30" alt=""><span class="topbar-brand-name">Gym<span>OS</span><small>FITNESS OPERATING SYSTEM</small></span></div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Train with intent</span><button class="theme-quick" data-action="cycle-theme" title="Đổi màu nhanh" aria-label="Đổi màu nhanh"><span aria-hidden="true">◐</span></button>
+          <button class="topbar-settings" data-nav="settings" title="Cài đặt" aria-label="Cài đặt">⚙</button></div>
       </header>
       <main id="app" class="app-container" tabindex="-1"><div class="loading">Đang chuẩn bị lịch tập…</div></main>
       <footer class="footer"><span>Built for consistency, not perfection.</span><span>GymOS · Private by design</span></footer>
     </div>
   </div>
   <nav class="bottom-nav" aria-label="Điều hướng trên điện thoại">
-    <button data-nav="home"><span>⌂</span><small>Hôm nay</small></button>
-    <button data-nav="week"><span>▦</span><small>Lịch tập</small></button>
-    <button data-nav="cardio"><span>♡</span><small>Cardio</small></button>
-    <button data-nav="library"><span>▤</span><small>Bài tập</small></button>
-    <button data-nav="history"><span>◴</span><small>Nhật ký</small></button>
-    <button data-nav="insights"><span>▥</span><small>Tiến độ</small></button>
+    <button data-nav="home"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg></span><small>Hôm nay</small></button>
+    <button data-nav="week"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span><small>Lịch tập</small></button>
+    <button data-nav="cardio"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.3 12h4.3l2-3 2.6 6 2.1-3h6"/></svg></span><small>Cardio</small></button>
+    <button data-nav="library"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6.5 6.5 3-3M14.5 14.5l3-3M5 16l-1 1a2 2 0 0 0 3 3l1-1M16 5l1-1a2 2 0 0 1 3 3l-1 1M7 17l10-10M5 5l3 3M16 16l3 3"/></svg></span><small>Bài tập</small></button>
+    <button data-nav="history"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><small>Nhật ký</small></button>
+    <button data-nav="insights"><span class="nav-glyph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20V9M14 20V4M19 20v-9" stroke-width="3"/></svg></span><small>Tiến độ</small></button>
   </nav>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <input type="file" id="importFile" accept="application/json,.json" hidden>

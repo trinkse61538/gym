@@ -205,3 +205,153 @@ body{
   .hero-badges{margin-top:12px}
   .theme-grid{grid-template-columns:1fr}
 }
+
+/* GymOS v4.1 | Real athlete hero + data-driven performance dashboard */
+.brand-mark-image{height:54px;width:54px;display:block;flex:none;filter:drop-shadow(0 8px 16px var(--accent-glow));border-radius:14px}
+.brand-copy strong{font-size:23px}
+.brand-copy small{letter-spacing:.21em}
+.nav-glyph{width:23px;min-width:23px;display:inline-flex;align-items:center;justify-content:center}
+.nav-glyph svg{height:20px;width:20px;stroke:currentColor;transition:transform .2s ease}
+.nav-link:hover .nav-glyph svg{transform:scale(1.08)}
+.bottom-nav .nav-glyph{min-width:0;width:auto;display:inline-flex;justify-content:center}
+.bottom-nav .nav-glyph svg{width:21px;height:21px}
+.theme-quick{height:34px;width:34px;border-radius:11px;border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--lime);font-size:20px;display:grid;place-items:center}
+.theme-quick:hover{background:var(--accent-line)}
+.status-dot{box-shadow:0 0 0 4px var(--accent-soft)}
+.premium-hero{
+  min-height:350px;
+  align-items:center;
+  overflow:hidden;
+  padding:34px clamp(22px,3vw,40px) 37px;
+  isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(8,15,22,.97) 0%,rgba(8,15,22,.94) 23%,rgba(8,15,22,.72) 48%,rgba(8,15,22,.08) 83%),
+    url('./assets/hero-athlete.webp') 64% 27% / cover no-repeat;
+  border-color:var(--accent-line);
+  box-shadow:0 22px 60px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.02)
+}
+.premium-hero:before{content:"";position:absolute;left:0;right:auto;top:0;width:5px;height:100%;background:linear-gradient(180deg,var(--accent-2),var(--accent));border:0;border-radius:0;box-shadow:0 0 24px var(--accent-glow);z-index:2}
+.premium-hero:after{content:"";position:absolute;width:460px;height:520px;right:11%;top:-165px;border:0;border-radius:0;background:linear-gradient(115deg,transparent 55%,var(--accent-soft) 55%,var(--accent-soft) 59%,transparent 59%,transparent 69%,var(--accent-glow) 69%,transparent 73%);transform:skewX(-7deg);z-index:0;pointer-events:none}
+.hero-content{max-width:650px;position:relative;z-index:2}
+.hero-kicker{display:flex;gap:9px;align-items:center;color:#e6f2ee;font-size:10px;font-weight:760;letter-spacing:.22em}
+.hero-kicker-pulse{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px var(--accent-soft),0 0 14px var(--accent-glow)}
+.premium-hero h1{font-size:clamp(32px,3.35vw,49px);line-height:1.11;max-width:630px;margin:22px 0 14px;font-weight:820;letter-spacing:-.055em;text-shadow:0 2px 18px rgba(0,0,0,.3)}
+.premium-hero h1 em{font-style:italic;color:#fff;text-wrap:balance;font-weight:830;display:block;padding-right:0}
+.premium-hero h1 em:after{display:none}
+.premium-hero p{max-width:490px;font-size:13px;line-height:1.8;color:#c7d1d2;text-shadow:0 2px 12px #071017;margin-bottom:23px}
+.hero-actions .btn{min-height:44px}
+.hero-actions .outline{border-color:rgba(210,229,230,.36);background:rgba(8,18,23,.65);backdrop-filter:blur(8px)}
+.hero-footnotes{margin-top:28px;display:flex;align-items:center;gap:17px;flex-wrap:wrap;color:#b6c8c5;font-size:11px;font-weight:650;letter-spacing:.015em}
+.hero-footnotes span:first-letter{color:var(--lime)}
+.hero-progress{position:absolute;z-index:3;bottom:20px;right:22px;display:flex;align-items:center;gap:10px;max-width:220px;flex-wrap:wrap;padding:11px 15px;background:rgba(10,18,24,.79);border:1px solid rgba(225,242,233,.21);border-radius:13px;backdrop-filter:blur(14px);box-shadow:0 14px 30px rgba(0,0,0,.2)}
+.hero-progress strong{font-size:26px;line-height:1;color:var(--lime);font-variant-numeric:tabular-nums}
+.hero-progress strong small{font-size:12px;color:#d7e2e0;margin-left:2px}
+.hero-progress>span{font-size:10px;letter-spacing:.08em;color:#bdd0d1;font-weight:800;white-space:nowrap}
+.hero-mini-track{width:100%;height:4px;border-radius:99px;background:rgba(255,255,255,.19);overflow:hidden}
+.hero-mini-track span{display:block;height:100%;background:var(--lime);border-radius:99px;min-width:0;box-shadow:0 0 10px var(--accent-glow)}
+.dashboard-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:27px 0 16px}
+.dashboard-heading h2{font-size:24px;margin-top:7px;letter-spacing:-.04em}
+.dashboard-week-label{color:#8ea6ac;font-size:12px;font-weight:650;white-space:nowrap}
+.premium-metrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.premium-metrics .metric{position:relative;min-height:129px;padding:19px 18px 17px;overflow:hidden;border:1px solid #2a4143;background:linear-gradient(140deg,rgba(255,255,255,.025),rgba(255,255,255,.005)),#101d25;border-radius:15px;box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+.premium-metrics .metric:after{content:"";position:absolute;width:130px;height:130px;right:-80px;top:-80px;background:radial-gradient(circle,var(--accent-glow),transparent 68%);pointer-events:none}
+.premium-metrics .metric-top{font-size:10px;letter-spacing:.045em;font-weight:730;color:#99acb1}
+.premium-metrics .metric-value{font-size:32px;color:#f3f7f4;line-height:1.2;margin-top:15px;font-variant-numeric:tabular-nums}
+.premium-metrics .metric-unit{font-size:13px;letter-spacing:0;color:#b4c8c8;font-weight:660}
+.premium-metrics .metric-foot{color:#849ba0;font-size:10px;line-height:1.5;margin-top:5px}
+.metric-symbol{font-size:20px;color:var(--lime);font-weight:850}
+.dashboard-two-col{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(320px,1fr);gap:17px;margin-bottom:22px;align-items:stretch}
+.dashboard-two-col>.panel{min-width:0}
+.dashboard-week-card,.dashboard-trend-card{padding:23px 21px}
+.dashboard-week-card .panel-heading,.dashboard-trend-card .panel-heading{margin-bottom:20px}
+.dashboard-week-card .panel-heading h2,.dashboard-trend-card .panel-heading h2{margin-top:5px;font-size:18px}
+.dashboard-week-card .week-strip{gap:6px}
+.dashboard-week-card .day-tile{padding:11px 4px;min-height:106px}
+.week-progress-info{display:flex;justify-content:space-between;gap:8px;margin:17px 0 9px;font-size:11px;color:#acc2c1}
+.dashboard-two-col .mini-progress{height:7px;border-radius:99px;background:#2a3e40;overflow:hidden}
+.dashboard-two-col .mini-progress>div{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent-2),var(--accent));box-shadow:0 0 13px var(--accent-glow)}
+.dashboard-trend-card .chip{font-size:10px}
+.trend-chart{min-height:142px;display:flex;gap:5px;align-items:flex-end;justify-content:space-around;border-bottom:1px solid rgba(255,255,255,.11);margin-top:12px;padding:14px 0 3px}
+.trend-column{height:127px;min-width:0;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}
+.trend-count{font-size:10px;color:#c4d3d2;font-weight:760}
+.trend-bartrack{display:flex;align-items:flex-end;justify-content:center;height:84px;width:min(100%,27px);background:rgba(255,255,255,.025);border-radius:7px 7px 2px 2px;overflow:hidden}
+.trend-fill{width:100%;height:0;border-radius:7px 7px 1px 1px;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 0 15px var(--accent-glow)}
+.trend-column small{font-size:9px;color:#83989c;line-height:1.2;text-align:center;white-space:nowrap}
+.trend-caption{margin-top:17px;font-size:11px;color:#92a9aa;line-height:1.6}
+.feature-heading{margin-top:25px}
+.program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:23px}
+.program-card{min-width:0;min-height:220px;padding:23px 24px;border:1px solid #334752;border-radius:17px;color:#f5faf7;text-align:left;display:flex;flex-direction:column;align-items:flex-start;position:relative;overflow:hidden;background:linear-gradient(145deg,#132229,#0e1920);transition:transform .22s,border-color .22s,box-shadow .22s}
+.program-card:hover{transform:translateY(-4px);border-color:var(--accent-line);box-shadow:0 20px 40px rgba(0,0,0,.21)}
+.program-card:before{content:"";position:absolute;width:280px;height:240px;border-radius:50%;right:-150px;top:-120px;background:radial-gradient(circle,var(--accent-glow),transparent 65%);filter:blur(4px)}
+.program-card:after{content:"";position:absolute;width:180px;height:90px;right:-70px;bottom:0;border-top:2px solid var(--accent-line);transform:rotate(-27deg);pointer-events:none}
+.program-card.strength-program{background:linear-gradient(145deg,rgba(40,65,48,.45),transparent 55%),#101e25}
+.program-card.cardio-program{background:linear-gradient(145deg,rgba(27,66,72,.35),transparent 65%),#101e25}
+.program-card.library-program{background:linear-gradient(145deg,rgba(58,44,81,.28),transparent 65%),#101e25}
+.program-mark{font-size:10px;letter-spacing:.16em;font-weight:780;color:var(--lime)}
+.program-icon{position:absolute;right:22px;top:18px;color:var(--lime);font-size:29px;font-weight:780;line-height:1}
+.program-card h3{font-size:24px;line-height:1.12;font-weight:800;letter-spacing:-.05em;margin:21px 0 9px;z-index:1}
+.program-card p{font-size:12px;color:#b3c5c5;line-height:1.55;max-width:260px;margin-bottom:22px;z-index:1}
+.program-cta{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto;font-size:11px;color:#e1f0eb;font-weight:740;z-index:1}
+.program-cta b{color:var(--lime);font-size:21px}
+.lower-dashboard{margin-bottom:22px}
+.lower-dashboard .panel-heading h2{font-size:18px}
+.lower-dashboard .walk-guide{background:linear-gradient(145deg,#10232a,#142d2a);border:1px solid #30494c}
+[data-theme="purple"] .hero-progress,[data-theme="orange"] .hero-progress,[data-theme="cyan"] .hero-progress{border-color:var(--accent-line)}
+body:not([data-theme="lime"]) .chip.green,body:not([data-theme="lime"]) .callout.green,body:not([data-theme="lime"]) .nav-link.active,body:not([data-theme="lime"]) .muscle-card.selected,body:not([data-theme="lime"]) .cardio-mode.selected,body:not([data-theme="lime"]) .day-tile.completed{background:var(--accent-soft);border-color:var(--accent-line)}
+body:not([data-theme="lime"]) .chip.green,body:not([data-theme="lime"]) .muscle-card.selected b,body:not([data-theme="lime"]) .walk-steps b,body:not([data-theme="lime"]) .metric-symbol{color:var(--lime)}
+body:not([data-theme="lime"]) .btn.primary:hover{background:var(--accent-2)}
+body:not([data-theme="lime"]) .cardio-mode:hover{border-color:var(--accent-line);background:var(--accent-soft)}
+body:not([data-theme="lime"]) .day-tile.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-line) inset}
+body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
+@media(max-width:1400px){.premium-hero{min-height:340px}.premium-hero h1{font-size:clamp(30px,3.4vw,44px)}.dashboard-two-col{grid-template-columns:minmax(0,1.4fr) minmax(285px,1fr)}.premium-metrics .metric{padding:16px 14px}}
+@media(max-width:1160px){.premium-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-two-col{grid-template-columns:1fr}.program-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.premium-hero{background-position:62% 27%}.hero-progress{display:none}}
+@media(max-width:960px){.program-grid{grid-template-columns:1fr 1fr}.program-card:last-child{grid-column:1/-1}.premium-hero{background-position:63% 27%}.premium-hero p{max-width:410px}}
+@media(max-width:750px){
+ .brand-mark-image{height:45px;width:45px}
+ .topbar-left{font-size:9px;letter-spacing:.065em}
+ .topbar-right>span:not(.status-dot){display:none}
+ .premium-hero{min-height:520px;align-items:flex-end;padding:25px 20px 25px;margin-bottom:20px;border-radius:18px;background:linear-gradient(0deg,#09131b 0%,rgba(9,18,26,.99) 18%,rgba(9,18,26,.72) 52%,rgba(9,18,26,.02) 100%),url('./assets/hero-athlete-mobile.webp') center 9%/cover no-repeat}
+ .premium-hero:after{right:-170px;top:-170px;opacity:.65}
+ .premium-hero h1{font-size:clamp(27px,7.2vw,36px);margin:13px 0 12px}
+ .premium-hero p{font-size:12px;line-height:1.65;margin-bottom:18px}
+ .hero-content{max-width:100%}
+ .hero-kicker{font-size:8px;letter-spacing:.13em}
+ .hero-actions{gap:8px}
+ .hero-actions .btn{min-height:39px;padding:9px 12px;font-size:11px}
+ .hero-footnotes{gap:9px;font-size:9px;margin-top:16px}
+ .dashboard-heading{align-items:flex-start;margin:20px 0 13px}
+ .dashboard-heading h2{font-size:20px}
+ .dashboard-week-label{font-size:10px}
+ .premium-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:17px}
+ .premium-metrics .metric{min-height:110px;padding:13px}
+ .premium-metrics .metric-top{font-size:9px}
+ .premium-metrics .metric-value{font-size:26px;margin-top:10px}
+ .premium-metrics .metric-foot{font-size:9px}
+ .dashboard-two-col{gap:14px;margin-bottom:18px}
+ .dashboard-week-card,.dashboard-trend-card{padding:16px 12px}
+ .dashboard-week-card .week-strip{gap:3px}
+ .dashboard-week-card .day-tile{padding:9px 1px;min-height:104px}
+ .trend-column small{font-size:8px}
+ .program-grid{grid-template-columns:1fr;gap:10px;margin-bottom:17px}
+ .program-card:last-child{grid-column:auto}
+ .program-card{min-height:172px;padding:20px}
+ .program-card h3{font-size:22px;margin:13px 0 7px}
+ .program-card p{font-size:12px;margin-bottom:12px}
+ .theme-quick{width:30px;height:30px}
+}
+@media(max-width:390px){.hero-footnotes span:last-child{display:none}.premium-hero{min-height:505px}.premium-hero h1{font-size:28px}.dashboard-week-label{max-width:95px;text-align:right}.premium-metrics .metric-top{font-size:8px}.dashboard-week-card .week-strip .day-tile .day-label{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.program-card,.session-card,.exercise-list-card{transition:none!important}}
+
+/* v4.1 refinement: keep athlete clear and brand legible on mobile */
+.premium-hero:after{display:none}
+.topbar-brand-icon{display:none;width:30px;height:30px;border-radius:9px}
+.topbar-brand-name{font-size:13px;font-weight:850;letter-spacing:-.045em;color:#eff8f1;line-height:1.15}
+.topbar-brand-name>span{color:var(--lime)}
+.topbar-brand-name small{display:block;color:#8499a1;font-size:8px;letter-spacing:.13em;margin-top:2px}
+@media(max-width:750px){
+ .topbar-brand-icon{display:block}
+ .topbar-accent{display:none}
+ .topbar-brand-name{font-size:16px}
+ .topbar-brand-name small{font-size:7px}
+ .topbar{padding-left:16px;padding-right:14px}
+}

@@ -1,3 +1,41 @@
+# GymOS v4.1 — Premium Dashboard (211 bài tập)
+
+Bản v4.1 là cập nhật trên v4.0: có ảnh vận động viên thật trong dashboard, logo/biểu tượng mới, sidebar/icon chuyên nghiệp, 4 KPI lấy từ nhật ký đã lưu, biểu đồ tần suất tập 8 tuần, 3 lối vào chương trình tập, 4 theme (lime/purple/orange/cyan) và nút chuyển màu nhanh ở header.
+
+**Không có dữ liệu luyện tập giả.** Khi chưa có buổi tập sẽ thấy số 0; kcal không được tính giả. Giao diện được thử ở các kích thước 320, 390, 768, 1080, 1440px.
+
+**Riêng tư:** nhật ký/set/rep/buổi tập vẫn lưu trên thiết bị trong `gymos_local_v1`; không có thông tin bệnh án nhúng vào mã nguồn. Hãy sao lưu JSON trước khi nâng cấp.
+
+## Cập nhật repository hiện tại
+
+```bash
+cd ~/Documents/gym-source
+git pull --ff-only origin main
+unzip -o ~/Documents/GymOS_v4_1_PremiumDashboard_PATCH.zip -d .
+git add -A
+git commit -m "GymOS v4.1 premium dashboard with athlete hero and themes"
+git push origin main
+```
+
+Nếu sử dụng bản ZIP đầy đủ thì thay tên ZIP trong lệnh giải nén. GitHub Pages sẽ tự triển khai khi nhánh main cập nhật. Nếu PWA còn giữ giao diện cũ, mở bản HTTPS trong trình duyệt có mạng, tải lại, sau đó đóng mở ứng dụng đã cài.
+
+## Cấu trúc v4.1
+
+- `assets/hero-athlete.webp`, `assets/hero-athlete-mobile.webp`: ảnh nền từ bộ thiết kế này; không phải ảnh chân dung người dùng.
+- `assets/icon.svg`, `assets/icon-192.png`, `assets/icon-512.png`: bộ logo/PWA icon mới.
+- `index.html`, `styles.css`, `app.js`: brand, dashboard, theme UI.
+- `sw.js`: cache `gymos-static-v41` bao gồm ảnh hero, có fallback offline.
+- `manifest.webmanifest`: tên hiển thị PWA.
+
+## Lưu ý về báo cáo
+
+- Số buổi tuần = số ngày có nhật ký hoàn thành trong tuần đang xem.
+- Phút cardio/giờ tập/sets được cộng từ các bản ghi thực tế.
+- Biểu đồ 8 tuần không có dữ liệu sẽ hiển thị số 0; không tự tạo xu hướng tăng hoặc số kcal.
+- Chỉ sử dụng đây làm công cụ hỗ trợ luyện tập, không phải chỉ định y khoa.
+
+---
+
 # GymOS v4.0 — Brand Refresh + Theme Switcher (211 bài tập)
 
 Bản v4.0 nâng cấp trực tiếp từ v3.0 và tương thích dữ liệu `localStorage` / backup JSON hiện có.
