@@ -161,6 +161,27 @@ export const EXERCISE_MEDIA = Object.freeze({
   gearPlateMarch:'Farmers_Walk',
   gearStepKneeDrive:'Dumbbell_Step_Ups',
   gearBandPunch:'Battling_Ropes',
+
+  // v4.5 additional fill-in mappings
+  biceps07:'Hammer_Curls',
+  bwButtKick:'Walking_Treadmill',
+  bwCalfReach:'Bodyweight_Squat',
+  bwHeelDig:'Walking_Treadmill',
+  bwKneeLift:'Farmers_Walk',
+  bwMarch:'Walking_Treadmill',
+  bwShadowbox:'Battling_Ropes',
+  bwWalkJacks:'Jump_Rope',
+  chest18:'Pushups',
+  core02:'Bird_Dog',
+  gearBandWalk:'Side_Leg_Raises',
+  gluteBridge:'Barbell_Glute_Bridge',
+  glutes09:'Glute_Kickback',
+  glutes11:'Side_Leg_Raises',
+  glutes13:'Side_Leg_Raises',
+  glutes20:'Side_Leg_Raises',
+  legs19:'Cable_Hip_Adduction',
+  shoulders02:'Side_Lateral_Raise',
+  shoulders03:'Side_Lateral_Raise',
 });
 export const PHOTO_BASE='https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/';
 

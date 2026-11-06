@@ -426,3 +426,5 @@ body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
 .workout-thumb .media-error span{font-size:7px}
 .workout-thumb .media-error strong{font-size:9px}
 .workout-thumb .media-error small{display:none}
+
+.head-badge{display:grid;gap:4px;justify-items:end}.head-badge span{font-size:12px;color:var(--muted)}.head-badge b{font-size:12px;color:var(--lime);font-weight:800}

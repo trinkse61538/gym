@@ -12,7 +12,7 @@ const initial = () => ({version:1,settings:{nickname:'Khai Trí',height:170,star
 const THEMES={lime:{label:'Xanh lá · đen',color:'#c8f376'},purple:{label:'Tím · đen',color:'#b48cff'},orange:{label:'Cam · đen',color:'#ff9f43'},cyan:{label:'Xanh ngọc · đen',color:'#5de1d0'}};
 let state;
 try {const loaded=JSON.parse(localStorage.getItem(STORE) || 'null'); state = loaded && typeof loaded === 'object' ? {...initial(),...loaded,settings:{...initial().settings,...(loaded.settings||{})},logs:loaded.logs||{},skips:loaded.skips||{},drafts:loaded.drafts||{},weights:Array.isArray(loaded.weights)?loaded.weights:[]} : initial(); if(!state.settings.nickname || state.settings.nickname==='Khải Trí' || state.settings.nickname==='Khai Tri') state.settings.nickname='Khai Trí';} catch {state=initial();}
-let route='home', weekStart=monday(today()), exerciseFilter='all', exerciseQuery='', cardioFilter='all', selectedExercise=null, workoutDate=null, workoutType=null, timerStart=null, timerLeft=0, timerHandle=null, promptModal=null;
+let route='home', weekStart=monday(today()), exerciseFilter='all', exerciseQuery='', cardioFilter='all', cardioGoalFilter='all', cardioEquipFilter='all', selectedExercise=null, workoutDate=null, workoutType=null, timerStart=null, timerLeft=0, timerHandle=null, promptModal=null;
 const sessionName = type => SESSIONS[type]?.name || 'Nghỉ / đi bộ nhẹ';
 const getGroup = x => x?.groupId || (Object.entries({chest:'Ngực',back:'Lưng',shoulders:'Vai',legs:'Chân',glutes:'Mông',biceps:'Tay trước',triceps:'Tay sau',core:'Core'}).find(([,name])=>(x?.group||'').includes(name))?.[0]||'other');
 const muscleName = id => id==='cardio'?'Tim mạch':MUSCLE_GROUPS.find(g=>g.id===id)?.name || 'Khác';
@@ -22,6 +22,46 @@ const niceDay = d => DAYS[(parse(d).getDay()+6)%7];
 const n = x => Number(x || 0);
 const cardioExercises = () => Object.entries(EXERCISES).filter(([,x])=>x.group==='Tim mạch');
 const moderateCardio = x => !['Nâng cao','Mạnh'].includes(x.difficulty)&&x.intensity!=='Mạnh';
+
+const CARDIO_GOAL_OPTIONS=[
+  {id:'all',name:'Tất cả mục tiêu',desc:'Hiện toàn bộ bài cardio'},
+  {id:'recovery',name:'Hồi phục',desc:'Nhịp nhẹ, dễ duy trì và ít áp lực hơn'},
+  {id:'fatloss',name:'Giảm mỡ',desc:'Tăng vận động toàn thân, tiêu hao tốt'},
+  {id:'endurance',name:'Sức bền',desc:'Duy trì lâu hơn, xây nền tim mạch'}
+];
+const CARDIO_EQUIPMENT_OPTIONS=[
+  {id:'all',name:'Tất cả máy / dụng cụ'},
+  {id:'floor',name:'Bodyweight / sàn'},
+  {id:'treadmill',name:'Treadmill'},
+  {id:'bike',name:'Bike'},
+  {id:'elliptical',name:'Elliptical / Arc'},
+  {id:'rower',name:'Rowing'},
+  {id:'stair',name:'Stair Climber'},
+  {id:'functional',name:'Dụng cụ functional'}
+];
+const cardioGoalName=id=>CARDIO_GOAL_OPTIONS.find(x=>x.id===id)?.name||id;
+const cardioEquipName=id=>CARDIO_EQUIPMENT_OPTIONS.find(x=>x.id===id)?.name||id;
+function cardioGoals(id,x){
+  const text=(id+' '+(x?.name||'')+' '+(x?.vi||'')+' '+(x?.equipment||'')).toLowerCase();
+  const set=new Set();
+  const light=/gentle|easy|light|recovery|walk|steady|march|heel|toe|nhẹ|hồi phục/.test(text)||x?.intensity==='Nhẹ';
+  const energetic=/interval|tempo|air bike|slam|rope|sled|shuffle|fast|shadow|climber|jump|punch|skater/.test(text)||x?.intensity==='Mạnh';
+  if(light || ['treadmill','bike','elliptical','mRecumbent','mTreadIncline','mArc','mUprightBike','mEllipticalReverse'].includes(id)) set.add('recovery');
+  if(x?.cardioCategory==='machine' || /row|bike|walk|elliptical|stair|carry|march|step/.test(text)) set.add('endurance');
+  if(x?.cardioCategory!=='machine' || energetic) set.add('fatloss');
+  if(!set.size) set.add('endurance');
+  return [...set];
+}
+function cardioEquipTag(id,x){
+  const text=(id+' '+(x?.name||'')+' '+(x?.vi||'')+' '+(x?.equipment||'')).toLowerCase();
+  if(x?.cardioCategory==='bodyweight') return 'floor';
+  if(/tread|walking_treadmill|máy chạy|đi bộ máy|walk/.test(text)) return 'treadmill';
+  if(/bike|xe đạp|spin|air bike|recumbent/.test(text)) return 'bike';
+  if(/elliptical|arc/.test(text)) return 'elliptical';
+  if(/row|chèo/.test(text)) return 'rower';
+  if(/stair|cầu thang/.test(text)) return 'stair';
+  return 'functional';
+}
 // Ảnh được ánh xạ theo ID bài tập, không lấy ảnh đại diện chung theo nhóm cơ.
 // Một số biến thể chưa có ảnh đối chiếu chính xác: cố ý dùng placeholder bằng chữ.
 function previewImg(ex, id, cls='exercise-cover', label=''){
@@ -120,15 +160,19 @@ ${healthNote()}`;
 function week(){const plan=getPlan(weekStart);return `${title('KẾ HOẠCH THÍCH NGHI','Lịch tập theo tuần','Dùng Full Body, chuyên nhóm cơ hoặc 6 loại cardio. Tập cardio khác đi bộ máy vẫn được tính vào mục tiêu tuần.',`<div class="week-nav">${btn('‹','week-prev','square-btn')}<span class="chip green">${niceDate(plan.start)} – ${niceDate(plan.end)}</span>${btn('›','week-next','square-btn')} ${btn('Tuần này','week-current','btn small')}</div>`)}<div class="week-detail"><div class="stack"><div class="panel"><div class="panel-heading"><h2>Tổng quan 7 ngày</h2><span class="chip">${plan.completed} / 3 buổi</span></div>${weekStrip(plan)}</div><div class="panel"><div class="panel-heading"><h2>Từng ngày trong tuần</h2></div><div class="timeline">${plan.days.map(d=>timelineDay(d)).join('')}</div></div></div><div class="stack"><div class="panel"><h3>Lịch thích nghi hoạt động như thế nào?</h3><div class="week-guide"><p>① Gợi ý 2 buổi sức mạnh/tuần. Buổi chuyên nhóm cơ được tính là một buổi tạ, thay vì tự động cộng thêm A/B.</p></div><div class="week-guide"><p>② App xếp các buổi tạ gợi ý cách nhau ít nhất 48 giờ; nếu bạn tự chọn ngày sát nhau, hãy xem cảnh báo phục hồi.</p></div><div class="week-guide"><p>③ Nếu bỏ buổi, app dời những buổi còn lại. Nếu hết ngày, tiếp tục xoay A/B tuần sau, không ép tập bù.</p></div><div class="week-guide"><p>④ Buổi cardio mặc định là đi bộ máy, nhưng bạn có thể đổi sang xe đạp, elliptical, rowing hoặc circuit bodyweight/dụng cụ. Lịch không ép tập bù cardio.</p></div><div class="divider"></div>${plan.unplanned.length?`<div class="shift-explain"><strong>Không thể xếp đủ trong tuần:</strong> ${plan.unplanned.map(t=>sessionName(t)).join(', ')}. Đây là chủ ý để không dồn buổi.</div>`:'<div class="shift-explain"><strong>Đã phân bổ đủ các buổi có thể tập.</strong> Mỗi khi bạn đánh dấu hoàn thành hoặc bỏ buổi, lịch cập nhật.</div>'}</div><div class="panel">${walkInfo(false)}<div class="buttonrow" style="margin-top:12px">${btn('Tùy chọn cardio ↗','go-cardio','btn small outline')}</div></div></div></div>`;}
 function timelineDay(d){const s=SESSIONS[d.type], badge=d.kind==='done'?'<span class="chip green">✓ Hoàn thành</span>':d.kind==='skipped'?'<span class="chip warning">Đã bỏ</span>':d.kind==='past'?'<span class="chip dim">Đã qua</span>':s?sessionPill(d.type):'<span class="chip dim">Phục hồi</span>';const dayinfo=d.kind==='done'?`Ghi nhận ${sessionName(d.type)}${d.log?.minutes?' · '+esc(d.log.minutes)+' phút':''}`:d.kind==='skipped'?'Bạn chủ động bỏ ngày này; lịch đã tự cập nhật':s?`${s.description} · ${s.time}`:'Nghỉ hoặc đi bộ rất nhẹ tùy sức';const can=d.date<=today(), future=d.date>today();let actions='';if(d.kind==='done')actions=btn('Xem/sửa','open-workout','btn small outline',`data-date="${d.date}" data-type="${d.type}"`);else if(d.kind==='skipped')actions=btn('Hoàn tác','undo-skip','btn small',`data-date="${d.date}"`);else if(future||d.date===today())actions=(s?btn('Bắt đầu','open-workout','btn small primary',`data-date="${d.date}" data-type="${d.type}"`):btn('Tập thêm','day','btn small outline',`data-date="${d.date}"`))+' '+btn('Bỏ','skip-day','btn small danger',`data-date="${d.date}"`);else actions=btn('Ghi bù','day','btn small outline',`data-date="${d.date}"`);return `<div class="timeline-day ${d.date===today()?'current':''}"><div class="timeline-date"><strong>${parse(d.date).getDate()}</strong><span>${niceDay(d.date)}</span></div><div class="timeline-content"><h3>${badge}</h3><p>${esc(dayinfo)}</p></div><div class="timeline-actions">${actions}</div></div>`;}
 function cardio(){
- const total=cardioExercises(),arr=total.filter(([,x])=>cardioFilter==='all'||x.cardioCategory===cardioFilter);
+ const total=cardioExercises();
+ const arr=total.filter(([id,x])=>(cardioFilter==='all'||x.cardioCategory===cardioFilter)&&(cardioGoalFilter==='all'||cardioGoals(id,x).includes(cardioGoalFilter))&&(cardioEquipFilter==='all'||cardioEquipTag(id,x)===cardioEquipFilter));
  const modes=Object.entries(SESSIONS).filter(([id])=>isCardio(id));
- const stats=weeklyStats(state.logs,today()),start=monday(today()),end=move(start,6);
+ const start=monday(today()),end=move(start,6);
  const weeklyMinutes=Object.entries(state.logs).filter(([date,log])=>date>=start&&date<=end&&log?.completed&&isCardio(log.type)).reduce((n,[,log])=>n+(Number(log.minutes)||0),0);
- return `${title('CARDIO · ENDURANCE','Tim mạch khỏe hơn, từng buổi một','Không cần nhảy hay chạy nước rút. Tập bằng máy cardio, bodyweight hoặc dụng cụ có sẵn tại phòng gym.')}
- <div class="cardio-hero"><div><div class="eyebrow aqua">SỨC BỀN · MỨC LÀM QUEN</div><h2 style="margin:9px 0">${weeklyMinutes} phút cardio tuần này</h2><p>Bắt đầu 1–2 buổi × 15–25 phút, tăng dần khi cơ thể thích nghi. Mục tiêu dài hạn hướng tới 150 phút/tuần cường độ vừa, kết hợp ít nhất 2 buổi tập cơ; không cần đạt ngay.</p><div class="buttonrow" style="margin-top:16px">${btn('Chọn buổi cardio hôm nay','day','btn primary',`data-date="${today()}"`)}${btn('Xem thư viện cardio','go-cardio-library','btn outline')}</div></div><div class="cardio-hero-stats"><strong>${weeklyMinutes}<small>phút / tuần</small></strong><small>RPE nên ở mức 3–4/10<br>vẫn nói chuyện được</small></div></div>
+ const goalCounts=Object.fromEntries(CARDIO_GOAL_OPTIONS.filter(x=>x.id!=='all').map(g=>[g.id,total.filter(([id,x])=>cardioGoals(id,x).includes(g.id)).length]));
+ const equipCounts=Object.fromEntries(CARDIO_EQUIPMENT_OPTIONS.filter(x=>x.id!=='all').map(g=>[g.id,total.filter(([id,x])=>cardioEquipTag(id,x)===g.id).length]));
+ return `${title('CARDIO & SỨC BỀN','Máy cardio, bodyweight và dụng cụ','Giờ mỗi bài cardio cũng có hình giống thư viện bài tập. Bạn có thể lọc theo mục tiêu và theo đúng nhóm máy đang có ở phòng gym của mình.',`<div class="head-badge"><span>${weeklyMinutes} phút tuần này</span><b>Talk test · vừa sức</b></div>`)}
+ <section class="panel cardio-hero"><div><div class="eyebrow aqua">CHỌN NHANH THEO MỤC TIÊU</div><h2 style="margin:8px 0 10px">Tách riêng cardio hồi phục, giảm mỡ và sức bền</h2><p class="muted-sm">Chọn mục tiêu trước, rồi lọc tiếp theo loại máy hoặc dụng cụ hiện có. Nếu phòng gym không có lớp đạp xe, bạn vẫn có nhiều lựa chọn thay thế tương đương.</p></div><div class="cardio-mode-grid">${CARDIO_GOAL_OPTIONS.filter(g=>g.id!=='all').map(g=>`<button class="cardio-mode ${cardioGoalFilter===g.id?'selected':''}" data-action="cardio-goal-filter" data-filter="${g.id}"><span class="cardio-mode-icon">${g.id==='recovery'?'🫀':g.id==='fatloss'?'🔥':'🏁'}</span><strong>${esc(g.name)}</strong><span>${esc(g.desc)}</span><small>${goalCounts[g.id]} bài</small></button>`).join('')}</div></section>
+ <section class="panel" style="margin-bottom:20px"><div class="panel-heading"><h2>Lọc theo máy có sẵn ở phòng gym</h2><span class="chip aqua">Thiết bị khả dụng</span></div><div class="buttonrow" style="margin:12px 0 0">${CARDIO_EQUIPMENT_OPTIONS.map(o=>btn(o.name,'cardio-equip-filter','btn small '+(cardioEquipFilter===o.id?'primary':'outline'),`data-filter="${o.id}"`)).join('')}</div><p class="muted-sm" style="margin-top:12px">Số bài theo thiết bị: ${CARDIO_EQUIPMENT_OPTIONS.filter(x=>x.id!=='all').map(o=>`${o.name} ${equipCounts[o.id]}`).join(' · ')}</p></section>
  <div class="cardio-mode-grid">${CARDIO_CATEGORIES.map(c=>`<button class="cardio-mode ${cardioFilter===c.id?'selected':''}" data-action="cardio-filter" data-filter="${c.id}"><span class="cardio-mode-icon">${c.icon}</span><strong>${esc(c.name)}</strong><span>${esc(c.description)}</span><small>${total.filter(([,x])=>x.cardioCategory===c.id).length} bài</small></button>`).join('')}</div>
- <section class="panel" style="margin-bottom:20px"><div class="panel-heading"><h2>6 buổi mẫu có thể đổi cho nhau</h2><span class="chip aqua">Chọn để tập hôm nay</span></div><p class="muted-sm" style="margin-bottom:16px">Hai buổi Full Body vẫn là phần trọng tâm. Một buổi cardio bất kỳ đã hoàn thành sẽ thay thế buổi đi bộ máy trong lịch đề xuất.</p><div class="cardio-session-grid">${modes.map(([id,s])=>`<article class="cardio-plan-card"><span class="cardio-plan-icon">${s.icon}</span><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><div class="exercise-specs"><span class="chip">${esc(s.time)}</span><span class="chip ${s.cardioMode==='circuit'?'purple':'aqua'}">${s.cardioMode==='circuit'?'Circuit':'Liên tục'}</span></div>${btn('Chọn buổi này','start-cardio','btn small primary',`data-type="${id}"`)}</article>`).join('')}</div></section>
- <section class="panel"><div class="panel-heading"><h2>Thư viện cardio: ${arr.length} / ${total.length} bài</h2><span class="chip aqua">Máy · Bodyweight · Dụng cụ</span></div><div class="buttonrow" style="margin-bottom:18px">${[['all','Tất cả'],...CARDIO_CATEGORIES.map(x=>[x.id,x.name])].map(([id,name])=>btn(name,'cardio-filter','btn small '+(id===cardioFilter?'primary':'outline'),`data-filter="${id}"`)).join('')}</div><div class="exercise-grid">${arr.map(([id,x])=>`<article class="exercise-list-card"><div class="exercise-tag">${esc(x.equipment)} · ${esc(x.difficulty)}</div><div class="exercise-head"><span class="exercise-emoji">${x.icon}</span><div><h3>${esc(x.vi)}</h3><p class="vietnamese">${esc(x.name)}</p></div></div><div class="exercise-specs"><span class="chip aqua">${esc(x.reps)}</span><span class="chip ${moderateCardio(x)?'dim':'warning'}">${esc(x.intensity||'Vừa')}</span></div><p class="muted-sm">${esc(x.avoid)}</p><div class="buttonrow">${btn('Cách tập ↗','exercise','btn small primary',`data-exercise="${id}"`)}<a class="btn small outline" target="_blank" rel="noopener noreferrer" href="${esc(x.video)}">▶ Tìm video ↗</a></div></article>`).join('')}</div></section>
+ <section class="panel" style="margin-bottom:20px"><div class="panel-heading"><h2>${modes.length} buổi cardio mẫu có thể đổi cho nhau</h2><span class="chip aqua">Chọn để tập hôm nay</span></div><p class="muted-sm" style="margin-bottom:16px">Hai buổi Full Body vẫn là phần trọng tâm. Một buổi cardio bất kỳ đã hoàn thành sẽ thay thế buổi đi bộ máy trong lịch đề xuất.</p><div class="cardio-session-grid">${modes.map(([id,s])=>`<article class="cardio-plan-card"><span class="cardio-plan-icon">${s.icon}</span><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><div class="exercise-specs"><span class="chip">${esc(s.time)}</span><span class="chip ${s.cardioMode==='circuit'?'purple':'aqua'}">${s.cardioMode==='circuit'?'Circuit':'Liên tục'}</span></div>${btn('Chọn buổi này','start-cardio','btn small primary',`data-type="${id}"`)}</article>`).join('')}</div></section>
+ <section class="panel"><div class="panel-heading"><h2>Thư viện cardio: ${arr.length} / ${total.length} bài</h2><span class="chip aqua">Có hình minh họa như thư viện bài tập</span></div><div class="buttonrow" style="margin-bottom:12px">${[['all','Tất cả'],...CARDIO_CATEGORIES.map(x=>[x.id,x.name])].map(([id,name])=>btn(name,'cardio-filter','btn small '+(id===cardioFilter?'primary':'outline'),`data-filter="${id}"`)).join('')}</div><div class="buttonrow" style="margin-bottom:18px">${CARDIO_GOAL_OPTIONS.map(o=>btn(o.name,'cardio-goal-filter','btn small '+(cardioGoalFilter===o.id?'primary':'outline'),`data-filter="${o.id}"`)).join('')}</div><div class="exercise-grid">${arr.map(([id,x])=>{const goals=cardioGoals(id,x).map(cardioGoalName).join(' · ');const equip=cardioEquipName(cardioEquipTag(id,x));return `<article class="exercise-list-card">${previewImg(x,id,'exercise-cover',x.vi)}<div class="exercise-card-body"><div class="exercise-tag-row"><div class="exercise-tag">${esc(x.equipment)}</div><div class="exercise-tag subtle">${esc(equip)}</div></div><div class="exercise-head noicon"><div><h3>${esc(x.vi)}</h3><p class="vietnamese">${esc(x.name)}</p></div></div><p class="muted-sm">🎯 Mục tiêu phù hợp: ${esc(goals)}</p><div class="exercise-specs"><span class="chip aqua">${esc(x.reps)}</span><span class="chip dim">${esc(x.intensity||x.difficulty||'Vừa')}</span></div><p class="muted-sm">🌬 ${esc(x.breath)}</p><div class="buttonrow">${btn('Cách tập & thở ↗','exercise','btn small primary',`data-exercise="${id}"`)}<a class="btn small outline" target="_blank" rel="noopener noreferrer" href="${esc(x.video)}">▶ Tìm video ↗</a></div></div></article>`;}).join('')}</div><p class="muted-sm" style="margin-top:14px">Nếu một bài vẫn chưa có ảnh thật sự khớp, app sẽ hiện placeholder rõ ràng thay vì lén dùng ảnh sai động tác. Bản này đã bổ sung thêm nhiều mapping còn thiếu, đặc biệt cho cardio và các biến thể cơ bản.</p></section>
  ${healthNote()}`;
 }
 function library(){
@@ -235,6 +279,8 @@ document.addEventListener('click',event=>{
   if(a==='go-cardio'){setRoute('cardio');return;}
   if(a==='go-cardio-library'){exerciseFilter='cardio';setRoute('library');return;}
   if(a==='cardio-filter'){cardioFilter=btnEl.dataset.filter;render();return;}
+  if(a==='cardio-goal-filter'){cardioGoalFilter=btnEl.dataset.filter;render();return;}
+  if(a==='cardio-equip-filter'){cardioEquipFilter=btnEl.dataset.filter;render();return;}
   if(a==='start-cardio'){if(state.logs[today()]?.completed){toast('Hôm nay đã có một buổi hoàn thành. Vào lịch tuần để chọn ngày khác.');setRoute('week');return;}closeModal();stopTimer();setRoute('workout',{date:today(),type});return;}
   if(a==='week-prev'){weekStart=move(weekStart,-7);render();return;}
   if(a==='week-next'){weekStart=move(weekStart,7);render();return;}
