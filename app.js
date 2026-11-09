@@ -110,9 +110,9 @@ function previewImg(ex, id, cls='exercise-cover', label=''){
 
   const note=`${title} · ${esc(ex?.equipment||'')}`;
   if(!sourceId){return `<div class="${cls} exercise-media exercise-media-empty" role="img" aria-label="Chưa có hình minh họa đã kiểm chứng cho ${title}"><div class="exercise-media-placeholder"><span>CHƯA CÓ ẢNH ĐÚNG</span><strong>${title}</strong><small>${esc(ex?.equipment||'Mở video để xem kỹ thuật')}</small></div></div>`;}
-  const path=PHOTO_BASE+encodeURIComponent(sourceId);
-  const backupPath=CDN_BASE+encodeURIComponent(sourceId);
-  const provenance=approximate?'<span class="media-provenance">Ảnh biến thể gần tương đương · kiểm tra video</span>':'';
+  const path='./assets/exercise-photos/'+encodeURIComponent(sourceId);
+  const backupPath=PHOTO_BASE+encodeURIComponent(sourceId);
+  const provenance=approximate?'<span class="media-provenance">Ảnh biến thể tham khảo, chưa khớp hoàn toàn · xem video đúng bài</span>':'';
   const fail=`<div class="exercise-media-placeholder media-error"><span>ẢNH CHƯA TẢI ĐƯỢC</span><strong>${title}</strong><small>Chạm Video để xem kỹ thuật chuẩn</small></div>`;
   if(cls==='exercise-visual'){
     return `<div class="${cls} exercise-media exercise-media-pair" aria-label="Hai tư thế bắt đầu và kết thúc của ${title}"><div class="exercise-pair-grid"><a href="${path}/0.jpg" target="_blank" rel="noopener noreferrer" class="exercise-frame"><img class="exercise-photo" src="${path}/0.jpg" data-fallback-src="${backupPath}/0.jpg" alt="${title}, tư thế bắt đầu" loading="lazy" decoding="async"><span>BẮT ĐẦU</span></a><a href="${path}/1.jpg" target="_blank" rel="noopener noreferrer" class="exercise-frame"><img class="exercise-photo" src="${path}/1.jpg" data-fallback-src="${backupPath}/1.jpg" alt="${title}, tư thế kết thúc" loading="lazy" decoding="async"><span>KẾT THÚC</span></a></div>${provenance}${fail}</div>`;

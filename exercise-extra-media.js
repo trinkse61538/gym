@@ -1,6 +1,7 @@
 // GymOS-specific original visuals for rare exercises.
 // AI visuals are previews only and MUST NOT replace checked technique demonstrations.
 export const EXERCISE_LOCAL_MEDIA=Object.freeze({
+  bwToeReach:'./assets/exercise-specific/toe-reach.webp',
   core02:'./assets/exercise-specific/bird-dog.webp',
   glutes11:'./assets/exercise-specific/seated-hip-abduction.webp',
   glutes08:'./assets/exercise-specific/quadruped-leg-extension.webp',
@@ -34,12 +35,12 @@ export const EXERCISE_LOCAL_MEDIA=Object.freeze({
 export const EXERCISE_APPROX_MEDIA=Object.freeze({
   // Different equipment or movement: hide rather than mislead.
   glutes09:false,glutes17:false,bwSideSteps:false,bwHeelDig:false,bwKneeLift:false,
-  bwButtKick:false,bwLateralShuffle:false,bwWalkJacks:false,bwCalfReach:false,
-  bwFastFeet:false,bwBoxerBounce:false,bwToeReach:false,
-  bwStepTouch:false,bwSkaterStep:false,bwInclineClimber:false,
-  gearLadder:false,gearToeTap:false,gearBandMarch:false,gearConeShuffle:false,
-  gearBandPunch:false,gearMedCarry:false,gearPlateMarch:false,gearSandbagCarry:false,
-  gearKettleMarch:false,gearBoxLateral:false,gearRopes:false,
+  bwButtKick:false,bwLateralShuffle:false,bwWalkJacks:false,bwCalfReach:true,
+  bwFastFeet:true,bwBoxerBounce:true,bwToeReach:false,
+  bwStepTouch:false,bwSkaterStep:true,bwInclineClimber:true,
+  gearLadder:false,gearToeTap:false,gearBandMarch:true,gearConeShuffle:true,
+  gearBandPunch:false,gearMedCarry:true,gearPlateMarch:true,gearSandbagCarry:false,
+  gearKettleMarch:true,gearBoxLateral:true,gearRopes:false,
   // Known invalid references from the public dataset; prevent broken images.
   gearJumpRope:false,
   // Similar movements, not exact variant.
@@ -47,4 +48,14 @@ export const EXERCISE_APPROX_MEDIA=Object.freeze({
   shoulders16:true,glutes01:true,glutes03:true,glutes05:true,
   triceps18:true,gearStepUp:true,bwStairEasy:true,bwBearMarch:true,
   mCurved:true,legs16:true,core19:true,
+  mAirBike:true,
+  back19:true,
+  biceps20:true,
+  triceps19:true,
+  triceps20:true,
+  legs02:true,
+  legs06:true,
+  back06:true,
+  gearStepKneeDrive:true,
+  gearBandWalk:true,
 });

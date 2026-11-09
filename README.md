@@ -186,3 +186,6 @@ Nếu đã tạo repo/remote rồi, đừng chạy `git init` hoặc `git remote
 ## v4.7 — Smart Training Engine
 
 Mã nguồn `workout-intelligence.mjs` bổ sung Smart Workout Mix (bài chính ổn định + xoay bài phụ theo 14 ngày, có xét thiết bị), Progressive Overload thận trọng (chỉ đề xuất khi đủ bằng chứng từ set/rep + form tốt + RPE), và Recovery Check-in (tự ghi năng lượng/đau cơ/giấc ngủ, giảm set hoặc dời ngày). Nhật ký và backup v4.6 được giữ nguyên.
+
+
+Ảnh được lưu cục bộ bằng `python3 scripts/sync-exercise-photos.py`; bản vá giữ nguyên nhật ký và thiết lập.

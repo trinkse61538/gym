@@ -1,0 +1,1862 @@
+{
+  "version": "4.8.5",
+  "total_exercises": 231,
+  "local_ai_previews": 28,
+  "hosted_photo_exercises": 203,
+  "variant_previews": 37,
+  "exactly_unmapped": 0,
+  "unique_source_movements": 135,
+  "jpg_frames": 270,
+  "source": "yuhonas/free-exercise-db, Unlicense",
+  "notice": "Some images are related variants; check the named video for exact technique.",
+  "exercises": [
+    {
+      "id": "legPress",
+      "name": "Leg Press",
+      "group": "Chân · Mông",
+      "local": null,
+      "ref": "Leg_Press",
+      "approx": false
+    },
+    {
+      "id": "chestPress",
+      "name": "Machine Chest Press",
+      "group": "Ngực · Tay sau",
+      "local": null,
+      "ref": "Machine_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "latPull",
+      "name": "Lat Pulldown",
+      "group": "Lưng · Tay trước",
+      "local": null,
+      "ref": "Wide-Grip_Lat_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "legCurl",
+      "name": "Seated Leg Curl",
+      "group": "Đùi sau",
+      "local": null,
+      "ref": "Seated_Leg_Curl",
+      "approx": false
+    },
+    {
+      "id": "deadBug",
+      "name": "Dead Bug",
+      "group": "Core · Bụng",
+      "local": null,
+      "ref": "Dead_Bug",
+      "approx": false
+    },
+    {
+      "id": "goblet",
+      "name": "Goblet Squat",
+      "group": "Đùi · Mông",
+      "local": null,
+      "ref": "Goblet_Squat",
+      "approx": false
+    },
+    {
+      "id": "seatedRow",
+      "name": "Seated Cable Row",
+      "group": "Lưng giữa · Tay trước",
+      "local": null,
+      "ref": "Seated_Cable_Rows",
+      "approx": false
+    },
+    {
+      "id": "gluteBridge",
+      "name": "Glute Bridge",
+      "group": "Mông · Core",
+      "local": null,
+      "ref": "Barbell_Glute_Bridge",
+      "approx": false
+    },
+    {
+      "id": "shoulderPress",
+      "name": "Machine Shoulder Press",
+      "group": "Vai · Tay sau",
+      "local": null,
+      "ref": "Machine_Shoulder_Military_Press",
+      "approx": false
+    },
+    {
+      "id": "inclinePush",
+      "name": "Incline Push-Up",
+      "group": "Ngực · Tay sau",
+      "local": null,
+      "ref": "Incline_Push-Up",
+      "approx": false
+    },
+    {
+      "id": "dumbbellPress",
+      "name": "Dumbbell Chest Press",
+      "group": "Ngực · Tay sau",
+      "local": null,
+      "ref": "Dumbbell_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "machineRow",
+      "name": "Seated Machine Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Leverage_Iso_Row",
+      "approx": false
+    },
+    {
+      "id": "lyingCurl",
+      "name": "Lying Leg Curl",
+      "group": "Đùi sau",
+      "local": null,
+      "ref": "Lying_Leg_Curls",
+      "approx": false
+    },
+    {
+      "id": "stepUp",
+      "name": "Step Up",
+      "group": "Đùi · Mông",
+      "local": null,
+      "ref": "Dumbbell_Step_Ups",
+      "approx": false
+    },
+    {
+      "id": "wallPush",
+      "name": "Wall Push-Up",
+      "group": "Ngực · Tay sau",
+      "local": null,
+      "ref": "Pushups",
+      "approx": true
+    },
+    {
+      "id": "bike",
+      "name": "Stationary Bike",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bicycling_Stationary",
+      "approx": false
+    },
+    {
+      "id": "treadmill",
+      "name": "Treadmill Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Walking_Treadmill",
+      "approx": false
+    },
+    {
+      "id": "elliptical",
+      "name": "Elliptical",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Elliptical_Trainer",
+      "approx": false
+    },
+    {
+      "id": "chest01",
+      "name": "Machine Chest Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Machine_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "chest02",
+      "name": "Incline Chest Press Machine",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Leverage_Incline_Chest_Press",
+      "approx": false
+    },
+    {
+      "id": "chest03",
+      "name": "Pec Deck Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Butterfly",
+      "approx": true
+    },
+    {
+      "id": "chest04",
+      "name": "Cable Chest Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Cable_Chest_Press",
+      "approx": false
+    },
+    {
+      "id": "chest05",
+      "name": "Standing Cable Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Cable_Crossover",
+      "approx": false
+    },
+    {
+      "id": "chest06",
+      "name": "Low-to-High Cable Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Low_Cable_Crossover",
+      "approx": false
+    },
+    {
+      "id": "chest07",
+      "name": "High-to-Low Cable Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Cable_Crossover",
+      "approx": false
+    },
+    {
+      "id": "chest08",
+      "name": "Flat Dumbbell Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Dumbbell_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "chest09",
+      "name": "Incline Dumbbell Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Incline_Dumbbell_Press",
+      "approx": false
+    },
+    {
+      "id": "chest10",
+      "name": "Flat Dumbbell Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Dumbbell_Flyes",
+      "approx": false
+    },
+    {
+      "id": "chest11",
+      "name": "Incline Dumbbell Fly",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Incline_Dumbbell_Flyes",
+      "approx": false
+    },
+    {
+      "id": "chest12",
+      "name": "Smith Machine Flat Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Smith_Machine_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "chest13",
+      "name": "Smith Machine Incline Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Smith_Machine_Incline_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "chest14",
+      "name": "Barbell Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Barbell_Bench_Press_-_Medium_Grip",
+      "approx": false
+    },
+    {
+      "id": "chest15",
+      "name": "Incline Barbell Bench Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "approx": false
+    },
+    {
+      "id": "chest16",
+      "name": "Decline Machine Chest Press",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Leverage_Decline_Chest_Press",
+      "approx": false
+    },
+    {
+      "id": "chest17",
+      "name": "Incline Push-Up",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Incline_Push-Up",
+      "approx": false
+    },
+    {
+      "id": "chest18",
+      "name": "Knee Push-Up",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Pushups",
+      "approx": true
+    },
+    {
+      "id": "chest19",
+      "name": "Standard Push-Up",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Pushups",
+      "approx": false
+    },
+    {
+      "id": "chest20",
+      "name": "Assisted Chest Dip",
+      "group": "Ngực",
+      "local": null,
+      "ref": "Dips_-_Chest_Version",
+      "approx": false
+    },
+    {
+      "id": "back01",
+      "name": "Wide-Grip Lat Pulldown",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Wide-Grip_Lat_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "back02",
+      "name": "Neutral-Grip Lat Pulldown",
+      "group": "Lưng",
+      "local": null,
+      "ref": "V-Bar_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "back03",
+      "name": "Close-Grip Lat Pulldown",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Close-Grip_Front_Lat_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "back04",
+      "name": "Single-Arm Lat Pulldown",
+      "group": "Lưng",
+      "local": null,
+      "ref": "One_Arm_Lat_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "back05",
+      "name": "Seated Cable Row Neutral",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Seated_Cable_Rows",
+      "approx": false
+    },
+    {
+      "id": "back06",
+      "name": "Seated Cable Row Wide",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Seated_Cable_Rows",
+      "approx": true
+    },
+    {
+      "id": "back07",
+      "name": "Chest-Supported Machine Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Leverage_Iso_Row",
+      "approx": false
+    },
+    {
+      "id": "back08",
+      "name": "Iso-Lateral High Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Leverage_High_Row",
+      "approx": false
+    },
+    {
+      "id": "back09",
+      "name": "Iso-Lateral Low Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Leverage_Iso_Row",
+      "approx": false
+    },
+    {
+      "id": "back10",
+      "name": "One-Arm Dumbbell Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "One-Arm_Dumbbell_Row",
+      "approx": false
+    },
+    {
+      "id": "back11",
+      "name": "Incline Bench Dumbbell Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Dumbbell_Incline_Row",
+      "approx": false
+    },
+    {
+      "id": "back12",
+      "name": "Bent-Over Barbell Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Bent_Over_Barbell_Row",
+      "approx": false
+    },
+    {
+      "id": "back13",
+      "name": "Smith Machine Bent-Over Row",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Smith_Machine_Bent_Over_Row",
+      "approx": false
+    },
+    {
+      "id": "back14",
+      "name": "Straight-Arm Cable Pulldown",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Straight-Arm_Pulldown",
+      "approx": false
+    },
+    {
+      "id": "back15",
+      "name": "Cable Face Pull",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Face_Pull",
+      "approx": false
+    },
+    {
+      "id": "back16",
+      "name": "Reverse Pec Deck",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Reverse_Machine_Flyes",
+      "approx": false
+    },
+    {
+      "id": "back17",
+      "name": "Assisted Pull-Up",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Band_Assisted_Pull-Up",
+      "approx": false
+    },
+    {
+      "id": "back18",
+      "name": "Scapular Pull-Up",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Scapular_Pull-Up",
+      "approx": false
+    },
+    {
+      "id": "back19",
+      "name": "Machine Pullover",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Bent-Arm_Dumbbell_Pullover",
+      "approx": true
+    },
+    {
+      "id": "back20",
+      "name": "Back Extension Machine",
+      "group": "Lưng",
+      "local": null,
+      "ref": "Hyperextensions_Back_Extensions",
+      "approx": false
+    },
+    {
+      "id": "shoulders01",
+      "name": "Machine Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Machine_Shoulder_Military_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders02",
+      "name": "Machine Lateral Raise",
+      "group": "Vai",
+      "local": "./assets/exercise-specific/machine-lateral-raise.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "shoulders03",
+      "name": "Cable Lateral Raise",
+      "group": "Vai",
+      "local": "./assets/exercise-specific/cable-lateral-raise.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "shoulders04",
+      "name": "Dumbbell Lateral Raise",
+      "group": "Vai",
+      "local": null,
+      "ref": "Side_Lateral_Raise",
+      "approx": false
+    },
+    {
+      "id": "shoulders05",
+      "name": "Seated Dumbbell Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Dumbbell_Shoulder_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders06",
+      "name": "Neutral-Grip Dumbbell Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Dumbbell_Shoulder_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders07",
+      "name": "Landmine Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Barbell_Shoulder_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders08",
+      "name": "Single-Arm Cable Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Cable_Shoulder_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders09",
+      "name": "Reverse Pec Deck Rear Delt",
+      "group": "Vai",
+      "local": null,
+      "ref": "Reverse_Machine_Flyes",
+      "approx": false
+    },
+    {
+      "id": "shoulders10",
+      "name": "Bent-Over Dumbbell Reverse Fly",
+      "group": "Vai",
+      "local": null,
+      "ref": "Cable_Rear_Delt_Fly",
+      "approx": false
+    },
+    {
+      "id": "shoulders11",
+      "name": "Cable Rear Delt Fly",
+      "group": "Vai",
+      "local": null,
+      "ref": "Cable_Rear_Delt_Fly",
+      "approx": false
+    },
+    {
+      "id": "shoulders12",
+      "name": "Face Pull Rope",
+      "group": "Vai",
+      "local": null,
+      "ref": "Face_Pull",
+      "approx": false
+    },
+    {
+      "id": "shoulders13",
+      "name": "Dumbbell Front Raise",
+      "group": "Vai",
+      "local": null,
+      "ref": "Front_Dumbbell_Raise",
+      "approx": false
+    },
+    {
+      "id": "shoulders14",
+      "name": "Cable Front Raise",
+      "group": "Vai",
+      "local": null,
+      "ref": "Front_Cable_Raise",
+      "approx": false
+    },
+    {
+      "id": "shoulders15",
+      "name": "Plate Front Raise",
+      "group": "Vai",
+      "local": null,
+      "ref": "Front_Plate_Raise",
+      "approx": false
+    },
+    {
+      "id": "shoulders16",
+      "name": "Incline Bench Y Raise",
+      "group": "Vai",
+      "local": null,
+      "ref": "Straight_Raises_on_Incline_Bench",
+      "approx": true
+    },
+    {
+      "id": "shoulders17",
+      "name": "Cable External Rotation",
+      "group": "Vai",
+      "local": null,
+      "ref": "External_Rotation_with_Cable",
+      "approx": false
+    },
+    {
+      "id": "shoulders18",
+      "name": "Band External Rotation",
+      "group": "Vai",
+      "local": null,
+      "ref": "External_Rotation_with_Band",
+      "approx": false
+    },
+    {
+      "id": "shoulders19",
+      "name": "Smith Machine Shoulder Press",
+      "group": "Vai",
+      "local": null,
+      "ref": "Smith_Machine_Overhead_Shoulder_Press",
+      "approx": false
+    },
+    {
+      "id": "shoulders20",
+      "name": "Dumbbell Shrug",
+      "group": "Vai",
+      "local": null,
+      "ref": "Dumbbell_Shrug",
+      "approx": false
+    },
+    {
+      "id": "legs01",
+      "name": "45-Degree Leg Press",
+      "group": "Chân",
+      "local": null,
+      "ref": "Leg_Press",
+      "approx": false
+    },
+    {
+      "id": "legs02",
+      "name": "Horizontal Leg Press",
+      "group": "Chân",
+      "local": null,
+      "ref": "Narrow_Stance_Leg_Press",
+      "approx": true
+    },
+    {
+      "id": "legs03",
+      "name": "Leg Extension Machine",
+      "group": "Chân",
+      "local": null,
+      "ref": "Leg_Extensions",
+      "approx": false
+    },
+    {
+      "id": "legs04",
+      "name": "Seated Leg Curl",
+      "group": "Chân",
+      "local": null,
+      "ref": "Seated_Leg_Curl",
+      "approx": false
+    },
+    {
+      "id": "legs05",
+      "name": "Lying Leg Curl",
+      "group": "Chân",
+      "local": null,
+      "ref": "Lying_Leg_Curls",
+      "approx": false
+    },
+    {
+      "id": "legs06",
+      "name": "Standing Leg Curl",
+      "group": "Chân",
+      "local": null,
+      "ref": "Seated_Leg_Curl",
+      "approx": true
+    },
+    {
+      "id": "legs07",
+      "name": "Hack Squat Machine",
+      "group": "Chân",
+      "local": null,
+      "ref": "Hack_Squat",
+      "approx": false
+    },
+    {
+      "id": "legs08",
+      "name": "Smith Machine Squat",
+      "group": "Chân",
+      "local": null,
+      "ref": "Smith_Machine_Squat",
+      "approx": false
+    },
+    {
+      "id": "legs09",
+      "name": "Goblet Squat",
+      "group": "Chân",
+      "local": null,
+      "ref": "Goblet_Squat",
+      "approx": false
+    },
+    {
+      "id": "legs10",
+      "name": "Bodyweight Box Squat",
+      "group": "Chân",
+      "local": null,
+      "ref": "Bodyweight_Squat",
+      "approx": false
+    },
+    {
+      "id": "legs11",
+      "name": "Bulgarian Split Squat",
+      "group": "Chân",
+      "local": null,
+      "ref": "Split_Squats",
+      "approx": false
+    },
+    {
+      "id": "legs12",
+      "name": "Reverse Lunge",
+      "group": "Chân",
+      "local": null,
+      "ref": "Crossover_Reverse_Lunge",
+      "approx": false
+    },
+    {
+      "id": "legs13",
+      "name": "Walking Lunge",
+      "group": "Chân",
+      "local": null,
+      "ref": "Barbell_Walking_Lunge",
+      "approx": false
+    },
+    {
+      "id": "legs14",
+      "name": "Dumbbell Step-Up",
+      "group": "Chân",
+      "local": null,
+      "ref": "Dumbbell_Step_Ups",
+      "approx": false
+    },
+    {
+      "id": "legs15",
+      "name": "Romanian Deadlift Dumbbells",
+      "group": "Chân",
+      "local": null,
+      "ref": "Romanian_Deadlift",
+      "approx": false
+    },
+    {
+      "id": "legs16",
+      "name": "Romanian Deadlift Barbell",
+      "group": "Chân",
+      "local": null,
+      "ref": "Romanian_Deadlift",
+      "approx": true
+    },
+    {
+      "id": "legs17",
+      "name": "Seated Calf Raise",
+      "group": "Chân",
+      "local": null,
+      "ref": "Seated_Calf_Raise",
+      "approx": false
+    },
+    {
+      "id": "legs18",
+      "name": "Standing Calf Raise",
+      "group": "Chân",
+      "local": null,
+      "ref": "Standing_Calf_Raises",
+      "approx": false
+    },
+    {
+      "id": "legs19",
+      "name": "Hip Adduction Machine",
+      "group": "Chân",
+      "local": null,
+      "ref": "Cable_Hip_Adduction",
+      "approx": false
+    },
+    {
+      "id": "legs20",
+      "name": "Hip Abduction Machine",
+      "group": "Chân",
+      "local": null,
+      "ref": "Cable_Hip_Adduction",
+      "approx": false
+    },
+    {
+      "id": "glutes01",
+      "name": "Glute Bridge Floor",
+      "group": "Mông",
+      "local": null,
+      "ref": "Barbell_Glute_Bridge",
+      "approx": true
+    },
+    {
+      "id": "glutes02",
+      "name": "Hip Thrust Machine",
+      "group": "Mông",
+      "local": null,
+      "ref": "Barbell_Hip_Thrust",
+      "approx": false
+    },
+    {
+      "id": "glutes03",
+      "name": "Smith Machine Hip Thrust",
+      "group": "Mông",
+      "local": null,
+      "ref": "Barbell_Hip_Thrust",
+      "approx": true
+    },
+    {
+      "id": "glutes04",
+      "name": "Barbell Hip Thrust",
+      "group": "Mông",
+      "local": null,
+      "ref": "Barbell_Hip_Thrust",
+      "approx": false
+    },
+    {
+      "id": "glutes05",
+      "name": "Dumbbell Hip Thrust",
+      "group": "Mông",
+      "local": null,
+      "ref": "Barbell_Hip_Thrust",
+      "approx": true
+    },
+    {
+      "id": "glutes06",
+      "name": "Cable Glute Kickback",
+      "group": "Mông",
+      "local": null,
+      "ref": "Glute_Kickback",
+      "approx": false
+    },
+    {
+      "id": "glutes07",
+      "name": "Glute Kickback Machine",
+      "group": "Mông",
+      "local": null,
+      "ref": "Glute_Kickback",
+      "approx": false
+    },
+    {
+      "id": "glutes08",
+      "name": "Quadruped Donkey Kick",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/quadruped-leg-extension.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "glutes09",
+      "name": "Quadruped Fire Hydrant",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/fire-hydrant.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "glutes10",
+      "name": "Side-Lying Hip Abduction",
+      "group": "Mông",
+      "local": null,
+      "ref": "Side_Leg_Raises",
+      "approx": true
+    },
+    {
+      "id": "glutes11",
+      "name": "Seated Hip Abduction Machine",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/seated-hip-abduction.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "glutes12",
+      "name": "Standing Cable Hip Abduction",
+      "group": "Mông",
+      "local": null,
+      "ref": "Cable_Hip_Adduction",
+      "approx": true
+    },
+    {
+      "id": "glutes13",
+      "name": "Mini-Band Lateral Walk",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/lateral-band-walk.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "glutes14",
+      "name": "Cable Pull-Through",
+      "group": "Mông",
+      "local": null,
+      "ref": "Pull_Through",
+      "approx": false
+    },
+    {
+      "id": "glutes15",
+      "name": "Dumbbell Romanian Deadlift Glute",
+      "group": "Mông",
+      "local": null,
+      "ref": "Romanian_Deadlift",
+      "approx": false
+    },
+    {
+      "id": "glutes16",
+      "name": "Single-Leg Glute Bridge",
+      "group": "Mông",
+      "local": null,
+      "ref": "Single_Leg_Glute_Bridge",
+      "approx": false
+    },
+    {
+      "id": "glutes17",
+      "name": "Frog Pump",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/frog-pump.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "glutes18",
+      "name": "High Step-Up Glute Bias",
+      "group": "Mông",
+      "local": null,
+      "ref": "Dumbbell_Step_Ups",
+      "approx": false
+    },
+    {
+      "id": "glutes19",
+      "name": "Reverse Lunge Glute Bias",
+      "group": "Mông",
+      "local": null,
+      "ref": "Crossover_Reverse_Lunge",
+      "approx": false
+    },
+    {
+      "id": "glutes20",
+      "name": "Banded Clamshell",
+      "group": "Mông",
+      "local": "./assets/exercise-specific/banded-clamshell.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "biceps01",
+      "name": "Machine Biceps Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Machine_Bicep_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps02",
+      "name": "Cable Biceps Curl Straight Bar",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Standing_Biceps_Cable_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps03",
+      "name": "Cable Biceps Curl EZ Bar",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Standing_Biceps_Cable_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps04",
+      "name": "Dumbbell Alternating Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Seated_Dumbbell_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps05",
+      "name": "Dumbbell Simultaneous Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Seated_Dumbbell_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps06",
+      "name": "Hammer Curl Dumbbells",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Hammer_Curls",
+      "approx": false
+    },
+    {
+      "id": "biceps07",
+      "name": "Rope Hammer Curl",
+      "group": "Tay trước",
+      "local": "./assets/exercise-specific/rope-hammer-curl.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "biceps08",
+      "name": "Preacher Curl Machine",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Machine_Preacher_Curls",
+      "approx": false
+    },
+    {
+      "id": "biceps09",
+      "name": "EZ-Bar Preacher Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Preacher_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps10",
+      "name": "Incline Dumbbell Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Incline_Dumbbell_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps11",
+      "name": "Concentration Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Concentration_Curls",
+      "approx": false
+    },
+    {
+      "id": "biceps12",
+      "name": "Spider Curl Dumbbells",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Spider_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps13",
+      "name": "Standing EZ-Bar Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "EZ-Bar_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps14",
+      "name": "Standing Barbell Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Barbell_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps15",
+      "name": "Single-Arm Low Cable Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Standing_One-Arm_Cable_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps16",
+      "name": "Bayesian Cable Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Standing_One-Arm_Cable_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps17",
+      "name": "High Cable Biceps Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "High_Cable_Curls",
+      "approx": false
+    },
+    {
+      "id": "biceps18",
+      "name": "Cross-Body Hammer Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Cross_Body_Hammer_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps19",
+      "name": "Reverse EZ-Bar Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Reverse_Barbell_Curl",
+      "approx": false
+    },
+    {
+      "id": "biceps20",
+      "name": "Resistance Band Biceps Curl",
+      "group": "Tay trước",
+      "local": null,
+      "ref": "Barbell_Curl",
+      "approx": true
+    },
+    {
+      "id": "triceps01",
+      "name": "Cable Triceps Pushdown Rope",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Triceps_Pushdown_-_Rope_Attachment",
+      "approx": false
+    },
+    {
+      "id": "triceps02",
+      "name": "Cable Triceps Pushdown Bar",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Triceps_Pushdown",
+      "approx": false
+    },
+    {
+      "id": "triceps03",
+      "name": "Cable Triceps Pushdown V-Bar",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Triceps_Pushdown_-_V-Bar_Attachment",
+      "approx": false
+    },
+    {
+      "id": "triceps04",
+      "name": "Overhead Cable Triceps Extension Rope",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Cable_Rope_Overhead_Triceps_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps05",
+      "name": "Single-Arm Cable Triceps Pushdown",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Cable_One_Arm_Tricep_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps06",
+      "name": "Reverse-Grip Triceps Pushdown",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Reverse_Grip_Triceps_Pushdown",
+      "approx": false
+    },
+    {
+      "id": "triceps07",
+      "name": "Machine Triceps Extension",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Machine_Triceps_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps08",
+      "name": "Assisted Triceps Dip",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Dips_-_Triceps_Version",
+      "approx": false
+    },
+    {
+      "id": "triceps09",
+      "name": "Seated Dip Machine",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Dip_Machine",
+      "approx": false
+    },
+    {
+      "id": "triceps10",
+      "name": "Dumbbell Overhead Triceps Extension",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Standing_Dumbbell_Triceps_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps11",
+      "name": "Single-Arm Dumbbell Overhead Extension",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Dumbbell_One-Arm_Triceps_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps12",
+      "name": "Dumbbell Triceps Kickback",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Tricep_Dumbbell_Kickback",
+      "approx": false
+    },
+    {
+      "id": "triceps13",
+      "name": "Cable Triceps Kickback",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Cable_One_Arm_Tricep_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps14",
+      "name": "Lying Dumbbell Triceps Extension",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Lying_Dumbbell_Tricep_Extension",
+      "approx": false
+    },
+    {
+      "id": "triceps15",
+      "name": "EZ-Bar Skull Crusher",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "EZ-Bar_Skullcrusher",
+      "approx": false
+    },
+    {
+      "id": "triceps16",
+      "name": "Close-Grip Smith Machine Press",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Smith_Machine_Close-Grip_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "triceps17",
+      "name": "Close-Grip Bench Press",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Close-Grip_Barbell_Bench_Press",
+      "approx": false
+    },
+    {
+      "id": "triceps18",
+      "name": "Diamond Push-Up Knees",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Pushups",
+      "approx": true
+    },
+    {
+      "id": "triceps19",
+      "name": "Bench Triceps Extension Bodyweight",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Lying_Dumbbell_Tricep_Extension",
+      "approx": true
+    },
+    {
+      "id": "triceps20",
+      "name": "Resistance Band Triceps Pushdown",
+      "group": "Tay sau",
+      "local": null,
+      "ref": "Triceps_Pushdown",
+      "approx": true
+    },
+    {
+      "id": "core01",
+      "name": "Dead Bug",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Dead_Bug",
+      "approx": false
+    },
+    {
+      "id": "core02",
+      "name": "Bird Dog",
+      "group": "Bụng · Core",
+      "local": "./assets/exercise-specific/bird-dog.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "core03",
+      "name": "Front Plank Knees",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Plank",
+      "approx": false
+    },
+    {
+      "id": "core04",
+      "name": "Forearm Plank",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Plank",
+      "approx": false
+    },
+    {
+      "id": "core05",
+      "name": "Side Plank Knees",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Push_Up_to_Side_Plank",
+      "approx": false
+    },
+    {
+      "id": "core06",
+      "name": "Side Plank Straight Legs",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Push_Up_to_Side_Plank",
+      "approx": false
+    },
+    {
+      "id": "core07",
+      "name": "Machine Abdominal Crunch",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Ab_Crunch_Machine",
+      "approx": false
+    },
+    {
+      "id": "core08",
+      "name": "Cable Kneeling Crunch",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Cable_Crunch",
+      "approx": false
+    },
+    {
+      "id": "core09",
+      "name": "Stability Ball Crunch",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Exercise_Ball_Crunch",
+      "approx": false
+    },
+    {
+      "id": "core10",
+      "name": "Reverse Crunch",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Reverse_Crunch",
+      "approx": false
+    },
+    {
+      "id": "core11",
+      "name": "Bent-Knee Leg Raise Floor",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Bent-Knee_Hip_Raise",
+      "approx": false
+    },
+    {
+      "id": "core12",
+      "name": "Pallof Press",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Pallof_Press",
+      "approx": false
+    },
+    {
+      "id": "core13",
+      "name": "Pallof Press Hold",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Pallof_Press",
+      "approx": false
+    },
+    {
+      "id": "core14",
+      "name": "Standing Cable Wood Chop",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Standing_Cable_Wood_Chop",
+      "approx": false
+    },
+    {
+      "id": "core15",
+      "name": "Half-Kneeling Cable Chop",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Standing_Cable_Wood_Chop",
+      "approx": false
+    },
+    {
+      "id": "core16",
+      "name": "Seated Knee Tuck",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Seated_Leg_Tucks",
+      "approx": false
+    },
+    {
+      "id": "core17",
+      "name": "Hanging Knee Raise Assisted",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Hanging_Leg_Raise",
+      "approx": false
+    },
+    {
+      "id": "core18",
+      "name": "Captain Chair Knee Raise",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Hanging_Leg_Raise",
+      "approx": false
+    },
+    {
+      "id": "core19",
+      "name": "Suitcase Carry",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Farmers_Walk",
+      "approx": true
+    },
+    {
+      "id": "core20",
+      "name": "Farmer Carry",
+      "group": "Bụng · Core",
+      "local": null,
+      "ref": "Farmers_Walk",
+      "approx": false
+    },
+    {
+      "id": "mRow",
+      "name": "Rowing Ergometer — Easy Pace",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Rowing_Stationary",
+      "approx": false
+    },
+    {
+      "id": "mRecumbent",
+      "name": "Recumbent Bike — Steady",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Recumbent_Bike",
+      "approx": false
+    },
+    {
+      "id": "mAirBike",
+      "name": "Air Bike — Low Resistance",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bicycling_Stationary",
+      "approx": true
+    },
+    {
+      "id": "mStair",
+      "name": "Stair Climber — Gentle",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Stairmaster",
+      "approx": false
+    },
+    {
+      "id": "mSki",
+      "name": "SkiErg — Technique First",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/ski-erg.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "mArc",
+      "name": "Arc Trainer — Easy",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Elliptical_Trainer",
+      "approx": false
+    },
+    {
+      "id": "mTreadIncline",
+      "name": "Gentle Incline Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Walking_Treadmill",
+      "approx": false
+    },
+    {
+      "id": "mBikeIntervals",
+      "name": "Bike Tempo Alternation",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bicycling_Stationary",
+      "approx": false
+    },
+    {
+      "id": "mCurved",
+      "name": "Curved Treadmill Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Walking_Treadmill",
+      "approx": true
+    },
+    {
+      "id": "bwMarch",
+      "name": "March in Place",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/march-in-place.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwStepTouch",
+      "name": "Side Step Touch",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/step-touch.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwWalkJacks",
+      "name": "Step Jacks — No Jump",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/walk-jacks.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwShadowbox",
+      "name": "Light Shadow Boxing",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/shadow-boxing.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwSideSteps",
+      "name": "Lateral Walk",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/side-steps.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwHeelDig",
+      "name": "Alternating Heel Dig",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/heel-dig.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwKneeLift",
+      "name": "Alternating Knee Raise",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/knee-lift.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwButtKick",
+      "name": "Standing Hamstring Curl Steps",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/butt-kicks.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwCalfReach",
+      "name": "Squat to Calf Raise — Easy",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Rocking_Standing_Calf_Raise",
+      "approx": true
+    },
+    {
+      "id": "bwSkaterStep",
+      "name": "Skater Step — No Jump",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Lateral_Bound",
+      "approx": true
+    },
+    {
+      "id": "bwStairEasy",
+      "name": "Easy Stair Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Stairmaster",
+      "approx": true
+    },
+    {
+      "id": "bwInclineClimber",
+      "name": "Incline Mountain Climber — Controlled",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Mountain_Climbers",
+      "approx": true
+    },
+    {
+      "id": "gearStepUp",
+      "name": "Low Step Platform",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Dumbbell_Step_Ups",
+      "approx": true
+    },
+    {
+      "id": "gearToeTap",
+      "name": "Step Toe Taps",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/toe-taps-step.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearBandWalk",
+      "name": "Resistance Band Side Steps",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Monster_Walk",
+      "approx": true
+    },
+    {
+      "id": "gearFarmer",
+      "name": "Light Farmer Carry",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Farmers_Walk",
+      "approx": false
+    },
+    {
+      "id": "gearMedCarry",
+      "name": "Light Medicine Ball Carry",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Medicine_Ball_Chest_Pass",
+      "approx": true
+    },
+    {
+      "id": "gearRopes",
+      "name": "Battle Rope Alternating Waves",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/battle-ropes.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearSled",
+      "name": "Very Light Sled Push",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Sled_Push",
+      "approx": false
+    },
+    {
+      "id": "gearLadder",
+      "name": "Agility Ladder Walk-through",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/agility-ladder.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearKettleMarch",
+      "name": "Light Kettlebell Suitcase Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Farmers_Walk",
+      "approx": true
+    },
+    {
+      "id": "gearBoxLateral",
+      "name": "Lateral Step-Over Low Platform",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Side_to_Side_Box_Shuffle",
+      "approx": true
+    },
+    {
+      "id": "gearBandMarch",
+      "name": "Band-Resisted March",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Monster_Walk",
+      "approx": true
+    },
+    {
+      "id": "gearJumpRope",
+      "name": "Jump Rope — Optional",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/jump-rope.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "mUprightBike",
+      "name": "Upright Bike — Steady",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bicycling_Stationary",
+      "approx": false
+    },
+    {
+      "id": "mSpinSeated",
+      "name": "Spin Bike — Seated Easy",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bicycling_Stationary",
+      "approx": false
+    },
+    {
+      "id": "mRowIntervals",
+      "name": "Rowing Ergometer — Gentle Alternation",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Rowing_Stationary",
+      "approx": false
+    },
+    {
+      "id": "mEllipticalReverse",
+      "name": "Elliptical — Reverse Stride",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Elliptical_Trainer",
+      "approx": false
+    },
+    {
+      "id": "mTreadTempo",
+      "name": "Treadmill Tempo Walk",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Walking_Treadmill",
+      "approx": false
+    },
+    {
+      "id": "mStairIntervalsEasy",
+      "name": "Stair Climber — Step & Recover",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Stairmaster",
+      "approx": false
+    },
+    {
+      "id": "bwFastFeet",
+      "name": "Fast Feet in Place",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Carioca_Quick_Step",
+      "approx": true
+    },
+    {
+      "id": "bwLateralShuffle",
+      "name": "Lateral Shuffle — Low Impact",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/lateral-shuffle.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "bwStandingClimber",
+      "name": "Standing Mountain Climber",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Mountain_Climbers",
+      "approx": false
+    },
+    {
+      "id": "bwReachSquat",
+      "name": "Reach Squat",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Bodyweight_Squat",
+      "approx": false
+    },
+    {
+      "id": "bwWalkout",
+      "name": "Walkout to Plank",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Pushups",
+      "approx": false
+    },
+    {
+      "id": "bwBearMarch",
+      "name": "Bear Hover March",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Mountain_Climbers",
+      "approx": true
+    },
+    {
+      "id": "bwBoxerBounce",
+      "name": "Boxer Bounce",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Skating",
+      "approx": true
+    },
+    {
+      "id": "bwToeReach",
+      "name": "Alternating Toe Reach",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/toe-reach.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearMedicineSlam",
+      "name": "Medicine Ball Slam — Light",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/medicine-ball-slam.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearSandbagCarry",
+      "name": "Sandbag Carry",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/sandbag-carry.webp",
+      "ref": null,
+      "approx": false
+    },
+    {
+      "id": "gearConeShuffle",
+      "name": "Cone Shuffle",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Lateral_Cone_Hops",
+      "approx": true
+    },
+    {
+      "id": "gearPlateMarch",
+      "name": "Plate Front Carry March",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Squat_with_Plate_Movers",
+      "approx": true
+    },
+    {
+      "id": "gearStepKneeDrive",
+      "name": "Step-Up Knee Drive",
+      "group": "Tim mạch",
+      "local": null,
+      "ref": "Step-up_with_Knee_Raise",
+      "approx": true
+    },
+    {
+      "id": "gearBandPunch",
+      "name": "Band Punch-Out",
+      "group": "Tim mạch",
+      "local": "./assets/exercise-specific/band-punch.webp",
+      "ref": null,
+      "approx": false
+    }
+  ]
+}
