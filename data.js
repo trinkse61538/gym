@@ -69,6 +69,9 @@ export const SESSIONS={
   K:{name:'Bodyweight flow',title:'Cardio không máy',kind:'cardio',time:'18–22 phút',accent:'aqua',icon:'🤸',description:'Circuit low-impact gồm fast feet, shuffle, standing climber và squat chạm cao.',exerciseIds:['bwFastFeet','bwLateralShuffle','bwStandingClimber','bwReachSquat'],cardioMode:'circuit'},
   L:{name:'Dụng cụ cardio mix',title:'Step, plate, band, slam',kind:'cardio',time:'18–24 phút',accent:'aqua',icon:'🏃',description:'Circuit với bục, đĩa tạ nhẹ, bóng y tế và dây kháng lực để tăng nhịp tim mà vẫn vui hơn đi máy đơn điệu.',exerciseIds:['gearStepKneeDrive','gearPlateMarch','gearBandPunch','gearMedicineSlam'],cardioMode:'circuit'},
   M:{name:'Carry & core cardio',title:'Di chuyển có tải nhẹ',kind:'cardio',time:'16–22 phút',accent:'aqua',icon:'🧳',description:'Các bài xách tạ/bao cát nhẹ và di chuyển giúp tăng nhịp tim mà không cần bật nhảy nhiều.',exerciseIds:['gearSandbagCarry','gearFarmer','bwBearMarch','bwToeReach'],cardioMode:'circuit'},
+  N:{name:'Hồi phục 20 phút',title:'Cardio rất nhẹ',kind:'cardio',time:'20 phút',presetMinutes:20,accent:'aqua',icon:'♡',description:'5 phút đầu làm nóng, 10 phút rất nhẹ và 5 phút thả lỏng. RPE 2–3/10, không ép tốc độ.',exerciseIds:['mRecumbent'],cardioMode:'steady'},
+  O:{name:'Vận động giảm mỡ 15 phút',title:'Không cần máy',kind:'cardio',time:'15 phút',presetMinutes:15,accent:'aqua',icon:'⚡',description:'3 phút làm nóng, 2 vòng bodyweight low-impact và 3 phút thả lỏng. Không đòi chạy nhanh hay HIIT.',exerciseIds:['bwMarch','bwStepTouch','bwWalkJacks','bwShadowbox'],cardioMode:'circuit'},
+  P:{name:'Sức bền 30 phút',title:'Đều nhịp và bền sức',kind:'cardio',time:'30 phút',presetMinutes:30,accent:'aqua',icon:'∿',description:'5 phút khởi động, 20 phút cardio mức nói được câu và 5 phút thả lỏng. Ưu tiên tăng thời gian trước độ dốc.',exerciseIds:['treadmill'],cardioMode:'steady'},
   ...FOCUS_SESSIONS
 };
 export const RESOURCES=[

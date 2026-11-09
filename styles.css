@@ -428,3 +428,65 @@ body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
 .workout-thumb .media-error small{display:none}
 
 .head-badge{display:grid;gap:4px;justify-items:end}.head-badge span{font-size:12px;color:var(--muted)}.head-badge b{font-size:12px;color:var(--lime);font-weight:800}
+
+/* GymOS v4.6 · Equipment-aware training & visual library */
+.gym-library-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 17px}
+.gym-setup-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(180px,.6fr);align-items:center;gap:20px;border:1px solid var(--accent-line);background:radial-gradient(circle at 90% 5%,var(--accent-glow),transparent 50%),linear-gradient(135deg,#16282b,#101923);padding:25px 27px;border-radius:22px;margin-bottom:16px;overflow:hidden}
+.gym-setup-hero h2{font-size:clamp(24px,3vw,34px);margin:10px 0 10px;letter-spacing:-.045em}
+.gym-setup-hero p{color:#b2c1c5;font-size:13px;line-height:1.55;max-width:580px;margin-bottom:20px}
+.gym-summary{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:1px solid #435b5a;background:#101d25d8;border-radius:22px;min-height:160px;padding:17px;text-align:center}
+.gym-summary strong{color:var(--lime);font-size:clamp(35px,4vw,52px);font-weight:860;letter-spacing:-.06em;line-height:1.05}
+.gym-summary strong small{font-size:17px;color:#9bafb2;letter-spacing:0}
+.gym-summary span{font-size:12px;color:#d4e3e2;font-weight:700}
+.gym-summary>small{font-size:11px;color:#8ca9aa}
+.gym-filter-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.gym-filter-row h3{margin:0 0 8px}
+.gym-filter-row p{max-width:560px}
+.gym-switch{display:flex;gap:9px;align-items:center;cursor:pointer;flex:none}
+.gym-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.gym-switch span{display:block;width:48px;height:28px;border-radius:99px;border:1px solid #52636b;background:#27353d;position:relative;transition:.2s}
+.gym-switch span:before{content:"";display:block;width:20px;height:20px;border-radius:50%;background:#9aabb1;position:absolute;top:3px;left:3px;transition:.2s}
+.gym-switch input:checked+span{background:var(--accent-soft);border-color:var(--accent-line)}
+.gym-switch input:checked+span:before{left:23px;background:var(--lime)}
+.gym-switch input:focus-visible+span{outline:2px solid var(--lime);outline-offset:3px}
+.gym-switch b{font-size:12px;color:#d9e8e5}
+.gym-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0}
+.gym-group{min-width:0}
+.gym-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:14px}
+.gym-choice{display:flex;min-width:0;align-items:center;gap:10px;background:#121f27;border:1px solid #31454d;border-radius:14px;padding:12px 10px;cursor:pointer;transition:.2s}
+.gym-choice:hover{border-color:var(--accent-line);background:#1d3037}
+.gym-choice.is-picked{border-color:var(--accent-line);background:linear-gradient(115deg,var(--accent-soft),#192a30)}
+.gym-choice input{position:absolute;opacity:0;width:1px;height:1px}
+.gym-choice input:focus-visible+.gym-check-icon{outline:2px solid var(--lime);outline-offset:3px}
+.gym-check-icon{display:grid;place-items:center;flex:none;width:27px;height:27px;border:1px solid #41575b;border-radius:9px;font-size:17px;color:#8ca4a8;background:#192932}
+.gym-choice.is-picked .gym-check-icon{color:#11191b;background:var(--lime);border-color:var(--lime);font-size:16px;font-weight:900}
+.gym-choice strong{display:block;line-height:1.2;font-size:12px;color:#e4efef;overflow-wrap:anywhere}
+.gym-choice small{display:block;font-size:10px;margin-top:4px;color:#93a7ad;line-height:1.3}
+.preset-panel{margin-bottom:19px}
+.preset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:15px}
+.preset-card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:20px;border:1px solid #344c51;background:linear-gradient(155deg,#1d2d2e,#111d28);border-radius:17px}
+.preset-card h3{font-size:18px;margin:0;line-height:1.22}
+.preset-card p{color:#a2b8ba;font-size:12px;line-height:1.45}
+.preset-card .btn{margin-top:auto;align-self:flex-start}
+.gym-local-media{display:grid;align-items:center}
+.gym-local-media img.exercise-photo{width:100%;height:100%;object-fit:contain;object-position:center}
+.media-provenance{position:absolute;left:8px;right:8px;bottom:8px;z-index:2;max-width:calc(100% - 16px);font-size:9px;line-height:1.2;letter-spacing:.05em;text-align:center;background:#142127e8;color:#d3e6dd;border:1px solid #52665e;padding:6px;border-radius:7px;pointer-events:none}
+.workout-thumb .media-provenance{font-size:0;width:6px;height:6px;padding:0;bottom:3px;right:3px;left:auto;background:var(--lime);border:none;border-radius:50%}
+.gym-local-media.exercise-visual{max-height:340px}
+.topbar .gym-head-shortcut{font-size:16px;font-weight:750;cursor:pointer}
+@media(max-width:1100px){.gym-groups{grid-template-columns:1fr}.gym-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:750px){.gym-setup-hero{grid-template-columns:1fr;padding:20px 17px}.gym-summary{min-height:110px}.gym-filter-row{align-items:flex-start;flex-direction:column}.gym-switch{margin-top:4px}.gym-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gym-choice{padding:11px 8px;gap:7px}.gym-choice strong{font-size:11px}.gym-check-icon{height:25px;width:25px}.preset-grid{grid-template-columns:1fr}.preset-card{padding:15px}.media-provenance{font-size:8px}}
+@media(max-width:350px){.gym-choice-grid{grid-template-columns:1fr}.topbar .gym-head-shortcut{display:none}}
+@media(max-width:350px){.topbar .gym-head-shortcut{display:grid;place-items:center}.topbar .theme-quick{display:none}.topbar-right{gap:6px}.topbar{padding-left:10px;padding-right:10px}}
+
+.topbar .gym-head-shortcut svg{width:20px;height:20px;display:block}
+@media(max-width:750px){
+ .cardio-hero{display:flex;flex-direction:column;gap:16px}
+ .cardio-hero>div:first-child{width:100%;min-width:0}
+ .cardio-hero .cardio-mode-grid{display:grid;grid-template-columns:1fr;width:100%;gap:8px}
+ .cardio-hero .cardio-mode{display:grid;grid-template-columns:30px minmax(0,1fr) 42px;grid-template-rows:auto auto;align-items:center;column-gap:10px;padding:12px 13px;min-width:0}
+ .cardio-hero .cardio-mode-icon{grid-column:1;grid-row:1/3;font-size:21px}
+ .cardio-hero .cardio-mode strong{grid-column:2;grid-row:1;font-size:14px}
+ .cardio-hero .cardio-mode>span:not(.cardio-mode-icon){grid-column:2;grid-row:2;font-size:11px;line-height:1.2}
+ .cardio-hero .cardio-mode small{grid-column:3;grid-row:1/3;margin:0;text-align:right;font-size:10px}
+}

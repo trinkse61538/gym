@@ -10,7 +10,7 @@ export const longDate = (s) => parse(s).toLocaleDateString('vi-VN',{weekday:'lon
 const DAYS = ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','Chủ nhật'];
 export { DAYS };
 
-export const CARDIO_TYPES = Object.freeze(['C','D','E','F','G','H']);
+export const CARDIO_TYPES = Object.freeze(['C','D','E','F','G','H','I','J','K','L','M','N','O','P']);
 export const isCardio = type => CARDIO_TYPES.includes(type);
 export const isStrength = type => Boolean(type && !isCardio(type));
 function lastStrengthBefore(logs, firstDay) {
