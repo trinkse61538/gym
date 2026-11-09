@@ -52,11 +52,11 @@ for(const id of ['bike','treadmill','elliptical']){
 }
 const FOCUS_SESSIONS = Object.fromEntries(Object.entries(FOCUS_TEMPLATES).map(([id,template])=>{
   const group=MUSCLE_GROUPS.find(x=>x.id===template.groupId);
-  return [id,{name:`Chuyên ${group.name}`,title:template.title,kind:'strength',time:'35–50 phút',accent:'lime',icon:group.icon,description:`Buổi ưu tiên ${group.name.toLowerCase()}: 4–5 bài được chọn cho người mới. Tùy ý đổi hoặc thêm bài.`,groupId:group.id,exerciseIds:[...template.exerciseIds]}];
+  return [id,{name:`Chuyên ${group.name}`,title:template.title,kind:'strength',time:'55–65 phút',accent:'lime',icon:group.icon,description:`Buổi ưu tiên ${group.name.toLowerCase()}: 4–5 bài được chọn cho người mới. Tùy ý đổi hoặc thêm bài.`,groupId:group.id,exerciseIds:[...template.exerciseIds]}];
 }));
 export const SESSIONS={
-  A:{name:'Full Body A',title:'Xây nền tảng',kind:'strength',time:'40–45 phút',accent:'lime',icon:'🏋️',description:'Máy tập dễ làm quen · chân, ngực, lưng và core',exerciseIds:['legPress','chestPress','latPull','legCurl','deadBug']},
-  B:{name:'Full Body B',title:'Tăng sức mạnh',kind:'strength',time:'40–45 phút',accent:'purple',icon:'💪',description:'Thân dưới, lưng, vai và ổn định cột sống',exerciseIds:['goblet','seatedRow','gluteBridge','shoulderPress','deadBug']},
+  A:{name:'Full Body A',title:'Xây nền tảng',kind:'strength',time:'55–65 phút',accent:'lime',icon:'🏋️',description:'Máy tập dễ làm quen · chân, ngực, lưng và core',exerciseIds:['legPress','chestPress','latPull','legCurl','deadBug']},
+  B:{name:'Full Body B',title:'Tăng sức mạnh',kind:'strength',time:'55–65 phút',accent:'purple',icon:'💪',description:'Thân dưới, lưng, vai và ổn định cột sống',exerciseIds:['goblet','seatedRow','gluteBridge','shoulderPress','deadBug']},
   C:{name:'Đi bộ máy',title:'Tim mạch & hồi phục',kind:'cardio',time:'20–30 phút',accent:'aqua',icon:'🚶',description:'Đi bộ máy 0–2% dốc, tăng thời lượng trước, theo talk test.',exerciseIds:['treadmill'],cardioMode:'steady'},
   D:{name:'Xe đạp bền',title:'Đạp đều, ít tác động khớp',kind:'cardio',time:'20–30 phút',accent:'aqua',icon:'🚲',description:'5 phút làm nóng + 15–20 phút đạp đều nhẹ + 5 phút thả lỏng; duy trì talk test.',exerciseIds:['bike'],cardioMode:'steady'},
   E:{name:'Elliptical',title:'Cardio toàn thân, ít va chạm',kind:'cardio',time:'20–25 phút',accent:'aqua',icon:'🚶',description:'Máy Elliptical kháng lực thấp; tăng thời lượng trước khi tăng lực.',exerciseIds:['elliptical'],cardioMode:'steady'},
