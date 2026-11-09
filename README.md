@@ -1,3 +1,9 @@
+# GymOS v4.8.1 — Fix Pack
+
+Các thay đổi xem trong [PATCH_NOTES_v4.8.1.md](PATCH_NOTES_v4.8.1.md). Sửa thời lượng cardio, tắt Smart Mix đúng nghĩa và thêm kiểm thử trước push.
+
+---
+
 # GymOS v4.7
 
 **Patch notes:** [PATCH_NOTES_v4.7.md](PATCH_NOTES_v4.7.md)
