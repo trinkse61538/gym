@@ -1,6 +1,6 @@
-# GymOS v4.8.1 — Fix Pack
+# GymOS v4.8.2 — Exercise Library Media Fixes
 
-Các thay đổi xem trong [PATCH_NOTES_v4.8.1.md](PATCH_NOTES_v4.8.1.md). Sửa thời lượng cardio, tắt Smart Mix đúng nghĩa và thêm kiểm thử trước push.
+Các thay đổi xem trong [PATCH_NOTES_v4.8.2.md](PATCH_NOTES_v4.8.2.md). Sửa thêm thư viện bài tập: bổ sung ảnh minh hoạ cho các bài hiếm, sửa bài bị trùng/sai ảnh và giảm các trường hợp thiếu hình.
 
 ---
 
