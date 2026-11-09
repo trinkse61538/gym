@@ -1,3 +1,7 @@
+# GymOS v4.7
+
+**Patch notes:** [PATCH_NOTES_v4.7.md](PATCH_NOTES_v4.7.md)
+
 # GymOS v4.1 — Premium Dashboard (211 bài tập)
 
 Bản v4.1 là cập nhật trên v4.0: có ảnh vận động viên thật trong dashboard, logo/biểu tượng mới, sidebar/icon chuyên nghiệp, 4 KPI lấy từ nhật ký đã lưu, biểu đồ tần suất tập 8 tuần, 3 lối vào chương trình tập, 4 theme (lime/purple/orange/cyan) và nút chuyển màu nhanh ở header.
@@ -173,9 +177,6 @@ Nếu đã tạo repo/remote rồi, đừng chạy `git init` hoặc `git remote
 - Users with cardiovascular/respiratory history should check with their clinician before increasing training intensity. All new movements are library options, not a recommendation to perform 20 in one workout.
 
 
-## GymOS v4.3: Ảnh minh họa chính xác trên điện thoại
-- Đã bỏ cơ chế dùng 9 ảnh mẫu thay phiên cho mọi bài tập. Thư viện dùng `exercise-media.js` để ánh xạ **theo ID**.
-- Hình tư thế đầu/cuối từ [yuhonas/free-exercise-db](https://github.com/yuhonas/free-exercise-db) — dữ liệu/ảnh được dự án công bố theo **Unlicense**. Cảm ơn dự án nguồn.
-- Ảnh dùng kết nối Internet (thử raw GitHub, sau đó CDN dự phòng). Khi chưa có ảnh tương thích hoặc tải lỗi, GymOS hiện thông báo rõ ràng — không thay bằng ảnh của bài khác.
-- Thẻ hình dùng `object-fit: contain` và chiều cao mobile thích ứng để không cắt người, máy hoặc thanh tạ.
-- Không đổi localStorage key `gymos_local_v2` của v4.2 nên giữ nguyên nhật ký và tùy chọn hiện tại trên cùng trình duyệt.
+## v4.7 — Smart Training Engine
+
+Mã nguồn `workout-intelligence.mjs` bổ sung Smart Workout Mix (bài chính ổn định + xoay bài phụ theo 14 ngày, có xét thiết bị), Progressive Overload thận trọng (chỉ đề xuất khi đủ bằng chứng từ set/rep + form tốt + RPE), và Recovery Check-in (tự ghi năng lượng/đau cơ/giấc ngủ, giảm set hoặc dời ngày). Nhật ký và backup v4.6 được giữ nguyên.

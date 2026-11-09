@@ -490,3 +490,37 @@ body:not([data-theme="lime"]) .cardio-check input{accent-color:var(--accent)}
  .cardio-hero .cardio-mode>span:not(.cardio-mode-icon){grid-column:2;grid-row:2;font-size:11px;line-height:1.2}
  .cardio-hero .cardio-mode small{grid-column:3;grid-row:1/3;margin:0;text-align:right;font-size:10px}
 }
+
+/* v4.7 · Smart Workout Mix / Progressive Overload / Recovery Planning */
+.smart-summary{margin:16px 0 18px;padding:17px 18px;border:1px solid var(--accent-line,rgba(191,237,111,.35));border-radius:16px;background:linear-gradient(125deg,var(--accent-soft,rgba(191,237,111,.12)),rgba(21,38,42,.38));display:grid;gap:9px;min-width:0}
+.smart-heading{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.smart-heading>span:first-child{color:var(--lime);font-size:11px;letter-spacing:.10em;font-weight:850}
+.smart-summary>p{font-size:13px;line-height:1.5;margin:0;color:#d4e1df}
+.smart-summary>.muted-sm{color:#9eafb0}
+.smart-tip{background:rgba(90,160,134,.08);border:1px solid rgba(142,200,181,.25);border-radius:12px;padding:12px 14px;display:grid;gap:5px;margin:3px 0 13px;max-width:100%}
+.smart-tip strong{font-size:11px;letter-spacing:.035em;color:#9ed9bf}
+.smart-tip p{margin:0;font-size:12px;line-height:1.5;color:#d3e2de}
+.smart-tip.increase{background:var(--accent-soft);border-color:var(--accent-line)}
+.smart-tip.increase strong{color:var(--lime)}
+.smart-tip.ease{background:rgba(235,166,74,.1);border-color:rgba(235,166,74,.3)}
+.smart-tip.ease strong{color:#f7c282}
+.form-quality{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #3a5553;border-radius:11px;margin:12px 0;color:#d4e4dd;font-size:12px;line-height:1.4;cursor:pointer;max-width:100%}
+.form-quality input{height:17px;width:17px;flex:none;accent-color:var(--lime)}
+.form-quality:has(input:checked){border-color:var(--accent-line);background:var(--accent-soft)}
+.readiness-panel{margin-bottom:0;background:linear-gradient(145deg,#182a2c,#152127)}
+.readiness-panel .form-grid{margin:15px 0;align-items:end}
+.readiness-panel .field{width:100%;min-width:0}
+.readiness-panel .form-label{min-width:0}
+.smart-advice{border:1px solid var(--accent-line);background:var(--accent-soft);padding:12px 14px;border-radius:12px;color:#e1eee5;font-size:13px;line-height:1.55;margin:12px 0}
+.smart-caution{border:1px solid rgba(235,169,96,.38);background:rgba(235,169,96,.10);padding:12px 14px;border-radius:12px;font-size:12px;color:#f0d2ad;line-height:1.5;margin:12px 0}
+.smart-settings-toggle{display:flex;gap:11px;align-items:flex-start;border:1px solid #34504b;background:rgba(60,87,80,.16);border-radius:12px;padding:13px;margin-top:10px;cursor:pointer}
+.smart-settings-toggle input{width:19px;height:19px;flex:none;margin-top:2px;accent-color:var(--lime)}
+.smart-settings-toggle span{display:grid;gap:5px;min-width:0}
+.smart-settings-toggle b{font-size:13px}
+.smart-settings-toggle small{color:#a7bbb8;font-size:12px;line-height:1.5}
+@media(max-width:750px){.smart-summary{padding:14px;gap:8px}.smart-tip{padding:10px 12px}.readiness-panel .form-grid{grid-template-columns:1fr}.form-quality{align-items:flex-start}.readiness-panel .panel-heading{flex-wrap:wrap;gap:8px}}
+/* The workout heading has three blocks; keep it stacked rather than cramped columns. */
+.session-header{display:block;max-width:900px;margin:20px 0 24px}
+.session-header h1{font-size:clamp(27px,3.4vw,39px);line-height:1.12;letter-spacing:-.035em;max-width:760px;margin:12px 0 9px}
+.session-header p{max-width:750px;line-height:1.6}
+@media(max-width:750px){.session-header{margin:18px 0 22px}.session-header h1{font-size:clamp(27px,8vw,34px);line-height:1.18}.session-header .eyebrow{font-size:10px;letter-spacing:.12em}}
