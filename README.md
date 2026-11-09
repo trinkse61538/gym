@@ -1,6 +1,6 @@
-# GymOS v4.8.2 — Exercise Library Media Fixes
+# GymOS v4.8.3 — Exercise Photo Assets
 
-Các thay đổi xem trong [PATCH_NOTES_v4.8.2.md](PATCH_NOTES_v4.8.2.md). Sửa thêm thư viện bài tập: bổ sung ảnh minh hoạ cho các bài hiếm, sửa bài bị trùng/sai ảnh và giảm các trường hợp thiếu hình.
+Các thay đổi xem trong [PATCH_NOTES_v4.8.3.md](PATCH_NOTES_v4.8.3.md). Sửa thêm thư viện bài tập: bổ sung ảnh minh hoạ cho các bài hiếm, sửa bài bị trùng/sai ảnh và giảm các trường hợp thiếu hình.
 
 ---
 
