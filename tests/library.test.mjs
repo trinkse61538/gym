@@ -17,27 +17,28 @@ test('Eight muscle groups contain at least 20 distinct, complete workouts each',
    }
  }
 });
-test('All focus templates have five supported exercise IDs',()=>{
+test('Legacy focus and new split templates contain supported exercise IDs',()=>{
  const ids=Object.keys(SESSIONS).filter(id=>SESSIONS[id].groupId);
- assert.equal(ids.length,8);
+ assert.equal(ids.length,12);
  for(const id of ids){
    const s=SESSIONS[id];
-   assert.equal(s.exerciseIds.length,5,id);
+   assert.equal(s.exerciseIds.length,s.split?6:5,id);
    assert.ok(s.exerciseIds.every(x=>EXERCISES[x]),id);
  }
 });
-test('Completed focus workout takes the place of one planned strength session',()=>{
+test('Completed legacy focus workout stays counted and preserves recovery',()=>{
  const logs={'2026-11-02':{completed:true,type:'FC'}};
  const p=buildWeek('2026-11-02','2026-11-03',{logs,skips:{}});
  assert.equal(p.doneStrength,1);
- assert.equal(p.planned.filter(x=>x.type!=='C').length,1);
+ assert.equal(p.planned.filter(x=>x.type!=='C').length,2);
  assert.ok(p.planned.every(x=>x.type==='C'||delta(x.date,'2026-11-02')>=2));
  assert.equal(weeklyStats(logs,'2026-11-03').strength,1);
 });
-test('Two completed focus workouts do not produce extra strength days',()=>{
+test('Two legacy focus workouts leave only recovery-compatible future slots',()=>{
  const logs={'2026-11-02':{completed:true,type:'FC'},'2026-11-04':{completed:true,type:'FV'}};
  const p=buildWeek('2026-11-02','2026-11-05',{logs,skips:{}});
  assert.equal(p.doneStrength,2);
- assert.equal(p.planned.filter(x=>x.type!=='C').length,0);
+ assert.equal(p.planned.filter(x=>x.type!=='C').length,1);
+ assert.ok(p.planned.every(x=>delta(x.date,'2026-11-04')>=2));
  assert.equal(weeklyStats(logs,'2026-11-05').strength,2);
 });

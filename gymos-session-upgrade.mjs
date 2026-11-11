@@ -59,7 +59,7 @@ export function planStrengthSession({
   date, session, exercises, logs = {}, settings = {}, canUse = () => true,
   readiness = {}, variant = 0, basePlanner
 }) {
-  const base = basePlanner
+  const base = basePlanner && !session?.split
     ? basePlanner({date, session, exercises, logs, settings, canUse, readiness, variant})
     : {ids:[], fixed:[], rotated:[], recovery:null};
   if (!session || session.kind !== 'strength') return base;
@@ -80,7 +80,7 @@ export function planStrengthSession({
   // Preserve foundational lifts where possible. If a machine is missing, seek the
   // same muscle group, not an unrelated substitute.
   for (const id of original) {
-    if (chosen.length >= 5) break;
+    if (chosen.length >= (session.split ? 6 : 5)) break;
     if (add(id)) continue;
     const match = exercises[id] && eligible
       .filter(k => !chosen.includes(k) && groupOf(exercises[k]) === groupOf(exercises[id]))

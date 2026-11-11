@@ -81,3 +81,10 @@ export const RESOURCES=[
   {label:'PureGym – video sử dụng các máy tập',url:'https://www.puregym.swiss/en/lets-get-started-equipment/'},
   {label:'StrengthLog – thư viện minh họa động tác',url:'https://www.strengthlog.com/exercise-directory/'}
 ];
+
+Object.assign(SESSIONS,{
+ U1:{name:'Thân trên · Ngực & vai',title:'Đẩy khỏe, vai vững',kind:'strength',groupId:'chest',split:true,time:'60–70 phút',accent:'lime',icon:'💪',description:'Ưu tiên ngực–vai, bổ trợ lưng và tay sau.',exerciseIds:['chestPress','chest02','seatedRow','shoulders01','triceps01','deadBug']},
+ L1:{name:'Chân · Đùi trước',title:'Nền tảng vững chắc',kind:'strength',groupId:'legs',split:true,time:'60–70 phút',accent:'purple',icon:'🦵',description:'Ưu tiên đùi trước, bổ trợ đùi sau, mông và core.',exerciseIds:['legPress','goblet','legCurl','gluteBridge','legs17','deadBug']},
+ U2:{name:'Thân trên · Lưng & tay',title:'Kéo chắc, lưng khỏe',kind:'strength',groupId:'back',split:true,time:'60–70 phút',accent:'lime',icon:'↗',description:'Ưu tiên xô–lưng giữa, bổ trợ ngực, vai sau và tay trước.',exerciseIds:['latPull','seatedRow','chestPress','back15','biceps01','core01']},
+ L2:{name:'Chân · Mông & đùi sau',title:'Kiểm soát từng nhịp',kind:'strength',groupId:'glutes',split:true,time:'60–70 phút',accent:'purple',icon:'🦵',description:'Ưu tiên mông–đùi sau, bổ trợ đùi trước và core.',exerciseIds:['gluteBridge','legCurl','legs01','glutes11','legs17','deadBug']}
+});

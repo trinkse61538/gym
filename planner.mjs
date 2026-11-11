@@ -27,60 +27,35 @@ function lastABBefore(logs, firstDay) {
  * 48-hour spacing between full-body sessions. Missed/past days are never used.
  * A/B rotate based on the last completed strength session of preceding weeks.
  */
-export function buildWeek(start, today, state={}) {
-  const logs=state.logs||{}; const skips=state.skips||{};
-  const dates=days(start), end=dates[6], entries=Object.fromEntries(dates.map((d,i)=>[d,{date:d, day:DAYS[i], kind:'rest', type:null}]));
-  const inWeek = dates.map(d=>({date:d, log: logs[d]})).filter(x=>x.log?.completed);
-  const completed = inWeek.map(x=>x.log.type);
-  const doneA=completed.includes('A'),doneB=completed.includes('B'),doneC=completed.some(isCardio);
-  const lastPrev=lastStrengthBefore(logs,start);
-  const strengthDone=inWeek.filter(x=>isStrength(x.log.type)).sort((a,b)=>a.date.localeCompare(b.date));
-  const priorAB=lastABBefore(logs,start);
-  const preferredFirst=priorAB==='A'?'B':'A';
-  // A muscle-focus session occupies one of the two weekly strength slots.
-  // Do not schedule extra A/B on top of manually completed strength sessions.
-  const need=Math.max(0,2-strengthDone.length);
-  const preference=(doneA&&doneB)?[]:doneA?['B']:doneB?['A']:[preferredFirst,preferredFirst==='A'?'B':'A'];
-  const nextOrder=preference.slice(0,need);
-  const minDay=today>start?today:start;
-  const isAvailable=(d)=> d>=minDay && !skips[d] && !logs[d]?.completed && entries[d]?.kind==='rest';
-  const planned=[];
-  let anchor=strengthDone.at(-1)?.date || lastPrev?.date || null;
-  // Pick as early as practicable, except reserve Friday for the second strength day.
-  for (let i=0; i<nextOrder.length; i++) {
-    const type=nextOrder[i];
-    const candidate=dates.filter(d=>isAvailable(d) && (!anchor || delta(d,anchor)>=2));
-    if (!candidate.length) break;
-    let chosen;
-    if(i===0 && strengthDone.length===0) {
-      // First full-body ideally Monday, or first open day following a missed Monday.
-      chosen=candidate[0];
-    } else {
-      // Second full-body ideally Friday, but choose Saturday if first was Thursday.
-      const friday=dates[4];
-      chosen=candidate.reduce((best,day)=>Math.abs(delta(day,friday))<Math.abs(delta(best,friday))?day:best,candidate[0]);
-    }
-    entries[chosen]={...entries[chosen],kind:'planned',type};
-    planned.push({date:chosen,type});
-    anchor=chosen;
+export const SPLIT_ORDER=['U1','L1','U2','L2'];
+const family=t=>t?.startsWith('U')?'upper':t?.startsWith('L')?'lower':'all';
+export function buildWeek(start,today,state={}) {
+ const logs=state.logs||{},skips=state.skips||{},drafts=state.drafts||{};
+ const dates=days(start),end=dates[6],available=state.settings?.trainingDays||[0,1,3,5];
+ const entries=Object.fromEntries(dates.map((date,i)=>[date,{date,day:DAYS[i],kind:date<today?'past':'rest',type:null}]));
+ const earliest=[today,start,...Object.keys(logs)].sort()[0];
+ let cursor=0, recent=[];
+ for(let d=earliest;d<=end;d=move(d,1)){
+  const log=logs[d]; let type=null,kind=null;
+  if(log?.completed){type=log.type;kind='done';}
+  else if(skips[d]){kind='skipped';}
+  else if(d>=today){
+   if(drafts[d]?.type){type=drafts[d].type;kind='planned';}
+   else if(available.includes((parse(d).getDay()+6)%7)){
+    const next=SPLIT_ORDER[cursor%4],f=family(next);
+    const conflict=recent.some(x=>delta(d,x.date)<2&&(family(x.type)===f||family(x.type)==='all'));
+    const consecutive=recent.some(x=>x.date===move(d,-1))&&recent.some(x=>x.date===move(d,-2));
+    if(!conflict&&!consecutive){type=next;kind='planned';}
+   }
   }
-  if(!doneC) {
-    const free=dates.filter(d=>isAvailable(d));
-    if(free.length){
-      const wednesday=dates[2];
-      const chosen=free.reduce((best,day)=>Math.abs(delta(day,wednesday))<Math.abs(delta(best,wednesday))?day:best,free[0]);
-      entries[chosen]={...entries[chosen],kind:'planned',type:'C'};
-      planned.push({date:chosen,type:'C'});
-    }
+  if(type&&isStrength(type)){
+   const ix=SPLIT_ORDER.indexOf(type); if(ix>=0)cursor=(ix+1)%4;
+   recent.push({date:d,type});recent=recent.filter(x=>delta(d,x.date)<=3);
   }
-  for (const d of dates) {
-    if(logs[d]?.completed) entries[d]={...entries[d],kind:'done',type:logs[d].type,log:logs[d]};
-    else if(skips[d]) entries[d]={...entries[d],kind:'skipped',type:null};
-    else if(d<today && entries[d].kind==='rest') entries[d]={...entries[d],kind:'past',type:null};
-  }
-  const unplanned=[...nextOrder,...(doneC?[]:['C'])].filter(t=>!completed.includes(t)&&!planned.some(p=>p.type===t));
-  const doneStrength=completed.filter(isStrength).length;
-  return {start,end,days:dates.map(d=>entries[d]),planned:planned.sort((a,b)=>a.date.localeCompare(b.date)),completed:inWeek.length,doneStrength,unplanned,doneTypes:completed, future:end>=today, todayInWeek:start<=today && today<=end};
+  if(entries[d]&&kind)entries[d]={...entries[d],type,kind,...(log?.completed?{log}:{})};
+ }
+ const list=dates.map(d=>entries[d]),planned=list.filter(d=>d.kind==='planned'),done=list.filter(d=>d.kind==='done');
+ return {start,end,days:list,planned,completed:done.length,doneStrength:done.filter(d=>isStrength(d.type)).length,unplanned:[],doneTypes:done.map(d=>d.type),future:end>=today,todayInWeek:start<=today&&today<=end,target:available.length};
 }
 
 export function weeklyStats(logs={}, referenceDay=iso(new Date())){
