@@ -1,0 +1,10 @@
+name = "gymos-health-sync"
+main = "worker.mjs"
+compatibility_date = "2026-11-01"
+workers_dev = true
+[vars]
+ALLOWED_ORIGIN = "https://gym.khaitringuyen.com"
+[[d1_databases]]
+binding = "DB"
+database_name = "gymos-health"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"

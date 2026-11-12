@@ -1,5 +1,5 @@
-const CACHE='gymos-static-v501';
-const ASSETS=["./", "./workout-intelligence.mjs", "./app.js", "./session-defaults.mjs", "./exercise-extra-media.js", "./index.html", "./data.js", "./styles.css", "./cardio.js", "./catalog.js", "./gymos-session-upgrade.mjs", "./gym-equipment.mjs", "./training-modes.mjs", "./exercise-media.js", "./manifest.webmanifest", "./planner.mjs", "./assets/icon.svg"];
+const CACHE='gymos-static-v510';
+const ASSETS=["./health.html", "./health.css", "./health-client.js", "./", "./workout-intelligence.mjs", "./app.js", "./session-defaults.mjs", "./exercise-extra-media.js", "./index.html", "./data.js", "./styles.css", "./cardio.js", "./catalog.js", "./gymos-session-upgrade.mjs", "./gym-equipment.mjs", "./training-modes.mjs", "./exercise-media.js", "./manifest.webmanifest", "./planner.mjs", "./assets/icon.svg"];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
